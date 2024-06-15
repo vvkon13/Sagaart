@@ -1,0 +1,71 @@
+.main {
+    padding: 20px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid #141722 1px;
+    gap: 10px;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-family: 'Inter';
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.navigation {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main__buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-family: 'TT Commons';
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 100%;
+    align-items: center;
+}
+
+.button:disabled {
+    color: rgba(20, 23, 34, 30%);
+    cursor: auto;
+}
+
+.container_input {
+    width: 460px;
+}
+
+.input {
+    font-family: 'TT Commons';
+    font-weight: 500;
+    font-size: 18px;
+    --g-text-input-border-radius: 6px;
+    --g-text-input-placeholder-color: rgba(20, 23, 34, 30%);
+    --g-text-input-border-color: rgba(20, 23, 34, 30%);
+}
