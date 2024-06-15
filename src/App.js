@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Deploy to GitHub Pages
+          Hello GitHub Pages
         </a>
       </header>
     </div>
