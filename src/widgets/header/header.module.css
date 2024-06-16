@@ -8,15 +8,6 @@
     gap: 10px;
 }
 
-.title {
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    font-family: 'Inter';
-    font-size: 32px;
-    font-weight: 900;
-}
-
 .navigation {
     width: 90vw;
     display: flex;
@@ -37,7 +28,7 @@
 
 .button {
     cursor: pointer;
-    padding: 0;
+    padding: 10px 0;
     border: none;
     font: inherit;
     color: inherit;
@@ -52,20 +43,21 @@
     align-items: center;
 }
 
+.button:hover {
+    transition: 0.2s;
+    border-bottom: solid #141722 2px;
+}
+
 .button:disabled {
     color: rgba(20, 23, 34, 30%);
     cursor: auto;
+    border-bottom: none;
+}
+
+.button:disabled:hover {
+    border-bottom: none;
 }
 
 .container_input {
     width: 460px;
-}
-
-.input {
-    font-family: 'TT Commons';
-    font-weight: 500;
-    font-size: 18px;
-    --g-text-input-border-radius: 6px;
-    --g-text-input-placeholder-color: rgba(20, 23, 34, 30%);
-    --g-text-input-border-color: rgba(20, 23, 34, 30%);
 }
