@@ -1,12 +1,10 @@
 import React from 'react';
-import style from './header.module.css';
+import style from './style.module.css';
 import color from '../../assets/icons/Color.svg';
 import person from '../../assets/icons/Person.svg';
 import mail from '../../assets/icons/Mail.svg';
 import bag from '../../assets/icons/Bag.svg';
 import heart from '../../assets/icons/Heart.svg';
-import write from '../../assets/icons/Write.svg';
-import { TextInput } from '@gravity-ui/uikit';
 import Logo from '../logo';
 import SerachInput from '../search-input';
 import { SearchInputType } from '../search-input/types';

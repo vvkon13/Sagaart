@@ -10,6 +10,7 @@ import { FC } from "react";
 const SerachInput: FC<SearchInputProps> = ({ place }) => {
 
     const image = place === 'header' ? writeImage : mailImage; 
+    const size = place === 'header' ? 'xl' : 'l'; 
 
     return (
         <TextInput 
@@ -18,7 +19,7 @@ const SerachInput: FC<SearchInputProps> = ({ place }) => {
                 style[`input_${place}`]
             )} 
             placeholder={placeholder[`${place}`]} 
-            size="xl" 
+            size={size}
             startContent={<img src={image} alt='write'/>}
         />
     )

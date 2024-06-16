@@ -6,6 +6,7 @@
     align-items: center;
     border-bottom: solid #141722 1px;
     gap: 10px;
+    background-color: #EFE9E0;
 }
 
 .navigation {
@@ -42,6 +43,7 @@
     line-height: 100%;
     align-items: center;
 }
+
 
 .button:hover {
     transition: 0.2s;
