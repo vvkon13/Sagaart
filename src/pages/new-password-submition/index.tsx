@@ -1,1 +1,1 @@
-import NewPasswordSubmition from "./ui/new-password-submition";
+import NewPasswordSubmition from './ui/new-password-submition';

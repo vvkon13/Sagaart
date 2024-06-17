@@ -1,1 +1,1 @@
-import UploadingAnObject from "./ui/uploading-an-object";
+import UploadingAnObject from './ui/uploading-an-object';

@@ -1,1 +1,1 @@
-import ProductCard from "./ui/product-card";
+import ProductCard from './ui/product-card';

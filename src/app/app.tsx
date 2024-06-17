@@ -5,10 +5,10 @@ import Footer from '../widgets/footer';
 
 function App() {
   return (
-    <div className={style.app}>
-      <Header />
-      <Footer />
-    </div>
+      <div className={style.app}>
+          <Header />
+          <Footer />
+      </div>
   );
 }
 

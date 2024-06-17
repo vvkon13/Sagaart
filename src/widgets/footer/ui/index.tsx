@@ -1,1 +1,1 @@
-import FooterColumn from "./footer-column";
+import FooterColumn from './footer-column';

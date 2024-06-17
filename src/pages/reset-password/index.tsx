@@ -1,1 +1,1 @@
-import ResetPassword from "./ui/reset-password";
+import ResetPassword from './ui/reset-password';

@@ -1,1 +1,1 @@
-import SignUp from "./ui/sign-up";
+import SignUp from './ui/sign-up';

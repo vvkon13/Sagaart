@@ -9,6 +9,6 @@ const Logo = ({place}: {place: string}): JSX.Element => {
             style.title,
             style[`title_${place}`]
         )}>şagaart</h1>
-    )
-}
+    );
+};
 export default Logo;

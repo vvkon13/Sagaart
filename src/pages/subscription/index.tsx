@@ -1,1 +1,1 @@
-import Subscription from "./ui/subscription";
+import Subscription from './ui/subscription';

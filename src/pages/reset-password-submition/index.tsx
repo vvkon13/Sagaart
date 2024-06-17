@@ -1,1 +1,1 @@
-import ResetPasswordSubmition from "./ui/reset-password-submition";
+import ResetPasswordSubmition from './ui/reset-password-submition';

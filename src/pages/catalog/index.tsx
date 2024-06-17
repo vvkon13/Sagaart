@@ -1,1 +1,1 @@
-import Catalog from "./ui/catalog";
+import Catalog from './ui/catalog';
