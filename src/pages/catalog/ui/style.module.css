@@ -1,0 +1,32 @@
+.main {
+    padding: 20px;
+    width: 100vw;
+    display: flex;
+    gap: 10px;
+    background-color: #EFE9E0;
+}
+
+.container {
+    width: 90vw;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px
+}
+
+.gallery {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 2800px;
+    align-content: start;
+    gap: 20px
+}
+
