@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 560px;
     height: auto;
+    break-inside: avoid;
 }
 
 .img {

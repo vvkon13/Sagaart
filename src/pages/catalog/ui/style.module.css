@@ -21,12 +21,13 @@
 }
 
 .gallery {
-    display: flex;
+    /* display: flex;
     gap: 0;
     flex-direction: column;
-    flex-wrap: wrap;
-    max-height: 2800px;
-    align-content: start;
-    gap: 20px
+    flex-wrap: wrap; */
+    columns: 3;
+    /* max-height: 2800px; */
+    /* align-content: start;
+    gap: 20px */
 }
 
