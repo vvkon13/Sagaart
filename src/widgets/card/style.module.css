@@ -1,4 +1,5 @@
 .main {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 560px;
@@ -43,6 +44,7 @@
 
 .more {
     display: flex;
+    justify-content: space-between;
 }
 
 .button {
@@ -54,7 +56,92 @@
     color: inherit;
     background-color: transparent;
     display: flex;
-    background-image: url(../../assets/icons/Arrow-down.svg);
     width: 24px;
     height: 24px;
+}
+
+.modal {
+    position: absolute;
+    width: 100%;
+    bottom: 95px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 258px;
+    background: linear-gradient(
+        0deg,                      
+        rgba(239, 233, 224, 1),   
+        rgba(239, 233, 224, 0.8),
+        rgba(239, 233, 224, 0.8) 
+    );
+}
+
+.modal__section { 
+    width: 520px;
+    margin: auto
+}
+
+.modal__button {
+    width: 520px;
+    height: 48px;
+    padding: 10px;
+    margin: auto;
+    font-family: 'TT Commons';
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    --g-button-text-color: #EFE9E0;
+    --g-button-background-color: #141722;
+    --g-button-border-radius: 3px
+}
+
+.modal__button:hover {
+    --g-button-border-color: #141722;
+}
+
+
+
+.modal_open {
+    display: flex;
+}
+
+.modal__main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tag {
+    border: 1px solid #141722;
+    border-radius: 2px;
+    font-family: 'TT Commons';
+    padding: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.unit {
+    width: 225px;
+    display: flex;
+    flex-direction: column;
+}
+
+.li {
+    list-style-type: none;
+}
+
+.li_desc {
+    color: rgba(20, 23, 34, 40%);
+}
+
+.ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.ul:last-child {
+    align-items: end;
 }

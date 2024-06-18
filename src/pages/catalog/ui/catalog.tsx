@@ -1,27 +1,21 @@
-import { Breadcrumbs, FirstDisplayedItemsCount, LastDisplayedItemsCount } from '@gravity-ui/uikit';
-import React from 'react';
+import { Breadcrumbs, FirstDisplayedItemsCount, LastDisplayedItemsCount, Pagination, PaginationProps } from '@gravity-ui/uikit';
+import React, { useState } from 'react';
 import { categories } from '../utils/categories';
 import Category from './category/category';
 import style from './style.module.css';
 import { cards } from '../utils/cards';
 import Card from '../../../widgets/card/card';
+import Filters from './filtration';
 
-const getSizeClass = (sizeCategory: number) => {
-    switch (sizeCategory) {
-        case 2:
-            return 'small';
-        case 3:
-            return 'medium';
-        case 4:
-            return 'large';
-        case 5:
-            return 'oversize';
-        default:
-            return 'small';
-    }
-};
 
 const Catalog = (): JSX.Element => {
+
+    const [state, setState] = useState({page: 1, pageSize: 20});
+
+    const handleUpdate: PaginationProps['onUpdate'] = (page, pageSize) =>
+    setState((prevState) => ({...prevState, page, pageSize}));
+
+
     return (
         <section className={style.main}>
             <div className={style.container}>
@@ -48,6 +42,7 @@ const Catalog = (): JSX.Element => {
                     <div>
 
                     </div>
+                    <Filters />
                     <div className={style.gallery}>
                         {cards.map(card => (
                             <Card card={card} key={card.product_id}/>
@@ -55,6 +50,7 @@ const Catalog = (): JSX.Element => {
                     </div>
                 </div>
             </div>
+            <Pagination page={1} pageSize={20} onUpdate={handleUpdate} />
         </section>
     );
 };
