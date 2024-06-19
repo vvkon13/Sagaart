@@ -11,17 +11,18 @@ import appStore from '../../assets/images/button.png';
 import googlePlay from '../../assets/images/button2.png';
 import grid from '../../assets/icons/Grid.svg';
 
+
 const Footer = (): JSX.Element => {
     return (
         <div className={style.main}>
             <div className={style.navigation}>
-                <Logo place='footer'/>
+                <Logo place='footer' />
                 <div className={style.navigation__main}>
                     <SerachInput place={SearchInputType.footer} />
                     <Button className={style.button} size='l' >Подписаться</Button>
                 </div>
             </div>
-            <div className={style.navigation__links }>
+            <div className={style.navigation__links}>
                 {footerContent.map((column: Column, index: number) => (
                     <FooterColumn columns={column} key={index} />
                 ))}
@@ -32,10 +33,10 @@ const Footer = (): JSX.Element => {
                         </h2>
                         <div className={style.social__link}>
                             <a href='#'>
-                                <img src={appStore} alt='AppStore'/>
+                                <img src={appStore} alt='AppStore' />
                             </a>
                             <a href='#'>
-                                <img src={googlePlay} alt='GooglePlay'/>
+                                <img src={googlePlay} alt='GooglePlay' />
                             </a>
                         </div>
                     </div>
@@ -45,16 +46,16 @@ const Footer = (): JSX.Element => {
                         </h2>
                         <div className={style.social__link}>
                             <a href='#'>
-                                <img src={grid} alt='AppStore'/>
+                                <img src={grid} alt='AppStore' />
                             </a>
                             <a href='#'>
-                                <img src={grid} alt='AppStore'/>
+                                <img src={grid} alt='AppStore' />
                             </a>
                             <a href='#'>
-                                <img src={grid} alt='AppStore'/>
+                                <img src={grid} alt='AppStore' />
                             </a>
                             <a href='#'>
-                                <img src={grid} alt='AppStore'/>
+                                <img src={grid} alt='AppStore' />
                             </a>
                         </div>
                     </div>
@@ -62,14 +63,14 @@ const Footer = (): JSX.Element => {
             </div>
             <div className={style.navigation}>
                 <h2 className={style.copyright}>
-                    © 2024 ООО «Sagaart»  
+                    © 2024 ООО «Sagaart»
                 </h2>
                 <div className={style.main__links}>
                     <a className={style.main__link} href='#'>
                         Оферта
                     </a>
                     <a className={style.main__link} href='#'>
-                        Персональные данные 
+                        Персональные данные
                     </a>
                 </div>
             </div>
