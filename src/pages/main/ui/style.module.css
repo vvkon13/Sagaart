@@ -19,6 +19,7 @@
 .section_main__content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .section_main__info {
@@ -77,7 +78,7 @@
     font-size: 16px;
     font-family: 'TT Commons';
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 900;
     line-height: 100%;
     align-items: center;
     --g-button-border-radius: 4px
@@ -97,6 +98,7 @@
 .section_main__benefits {
     margin: 120px 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .section_news {
@@ -120,6 +122,7 @@
 .section_news__main {
    display: flex;
    flex-direction: column;
+   flex-wrap: wrap;
    gap: 10px
 }
 
@@ -148,6 +151,7 @@
 
 .section_news__news {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -190,5 +194,86 @@
     font-weight: 400;
     margin: 0;
 }
+
+.section_design {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 120px auto 0;
+}
+
+.section_design__main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section_art {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 120px auto 120px;
+}
+
+.section_art__main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section_design__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.section__block {
+    width: 820px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px
+}
+
+.section__block__title {
+    font-size: 32px;
+    font-family: 'TT Commons';
+    margin: 0;
+    font-weight: 900;
+}
+
+.section__block__desc {
+    font-size: 18px;
+    font-family: 'TT Commons';
+    margin: 0;
+    font-weight: 400;
+}
+
+.section_art__info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.section__title {
+    text-transform: uppercase;
+    font-size: 42px;
+    font-family: 'TT Commons';
+    font-weight: 900;
+    margin: 0;
+}
+
+.section__desc {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: 'TT Commons';
+    font-weight: 500;
+    margin: 0;
+}
+
+
 
 

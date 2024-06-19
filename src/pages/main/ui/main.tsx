@@ -11,6 +11,8 @@ import image1 from '../../../assets/images/Image.png';
 import image2 from '../../../assets/images/Image-2.png';
 import image3 from '../../../assets/images/Image-3.png';
 import image4 from '../../../assets/images/Image-4.png';
+import design from '../../../assets/images/Desktop2.png';
+import art from '../../../assets/images/Desktop.png';
 
 const Main = (): JSX.Element => {
     return (
@@ -29,7 +31,7 @@ const Main = (): JSX.Element => {
                                 <Icon className={style.button_img} data={Database} size='16' />
                                 оценить объект
                             </Button>
-                            <Button size='l' className={style.section_main__button}>
+                            <Button size='l' className={style.button}>
                                 узнать подробнее
                             </Button>
                         </div>
@@ -101,10 +103,10 @@ const Main = (): JSX.Element => {
             </section>
             <section className={style.section_gallery}>
                 <div className={style.section_gallery__main}>
-                    <p className={style.section_galley__desc}>
+                    <p className={style.section__desc}>
                         галлерея
                     </p>
-                    <h2 className={style.section_gallery__title}>
+                    <h2 className={style.section__title}>
                         вдохновитесь новинками нашей арт-галлереи                     
                     </h2>
                     <p className={style.section_gallery__desc}>
@@ -115,11 +117,65 @@ const Main = (): JSX.Element => {
 
                 </div>
             </section>
-            <section>
-                
+            <section className={style.section_design}>
+                <div className={style.section_design__main}>
+                    <p className={style.section__desc}>
+                        дизайн
+                    </p>
+                    <h2 className={style.section__title}>
+                        Подбор картин в интерьер                     
+                    </h2>
+                </div>
+                <div className={style.section_design__info}>
+                    <img src={design} alt='design' />
+                    <div className={style.section__block}>
+                        <h3 className={style.section__block__title}>
+                            Удобный поиск арт-объектов в ваш интерьер
+                        </h3>
+                        <p className={style.section__block__desc}>
+                            Мы верим, что каждый дизайнерский проект заслуживает быть дополнен искусством, которое говорит само за себя. Позвольте нашему сервису стать мостом между вашим творчеством и миром современного искусства. Создавайте, вдохновляйтесь и превращайте свои проекты в произведения искусства вместе с нами
+                        </p>
+                        <p className={style.section__block__desc}> 
+                            Мы создали большое количество важных для дизайнера фильтров поиска, а так же поиск по изображению,  чтобы помочь вам найти идеальное художественное произведение, которое дополнит ваш творческий проект и вдохнет в него новую жизнь
+                        </p>
+                        <Button size='l' className={style.button}>
+                            перейти в каталог
+                        </Button>
+                    </div>
+                </div>
             </section>
-            <section>
-                
+            <section className={style.section_art}>
+                <div className={style.section_art__main}>
+                    <p className={style.section__desc}>
+                        художественное искусство
+                    </p>
+                    <h2 className={style.section__title}>
+                        Ваше искусство - наша платформа                    
+                    </h2>
+                </div>
+                <div className={style.section_art__info}>
+                    <div className={style.section__block}>
+                        <h3 className={style.section__block__title}>
+                            Оценка и продажа арт-объектов вашего творчества
+                        </h3>
+                        <p className={style.section__block__desc}>
+                            Для художников, стремящихся представить свои работы миру и найти подходящего покупателя, наш сайт предлагает уникальную платформу для оценки и продажи современного искусства.
+                        </p>
+                        <p className={style.section__block__desc}>
+                            Мы ценим каждого художника и его вклад в мир искусства. Позвольте нашей платформе стать вашим надежным партнером в путешествии от оценки до успешной продажи вашего искусства. Присоединяйтесь к нам, и вместе мы откроем новые горизонты для вашего творчества.
+                        </p>
+                        <div className={style.buttons}>
+                            <Button size='l' className={`${style.button} ${style.button_dark}`}>
+                                <Icon className={style.button_img} data={Database} size='16' />
+                                оценить объект
+                            </Button>
+                            <Button size='l' className={style.button}>
+                                перейти в каталог
+                            </Button>
+                        </div>
+                    </div>
+                    <img src={art} alt='art' />
+                </div>
             </section>
         </div>
     );
