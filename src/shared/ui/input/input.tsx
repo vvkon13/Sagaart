@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import {Eye,EyeSlash} from '@gravity-ui/icons';
+import { Eye, EyeSlash } from '@gravity-ui/icons';
 import { clsx } from 'clsx';
 import type { InputProps } from './types';
 import styles from './input.module.css';
@@ -25,6 +25,12 @@ export const Input: FC<InputProps> = ({
 		await trigger(name);
 	};
 
+	console.log(error,clsx({
+		[styles.input]: true,
+		[styles.input_typeSucces]: Boolean(error) === false,
+		[styles.input_typeError]: Boolean(error) === true,
+	}));
+
 	return (
     <label className={clsx(className, styles.label)}>
         {labelName}
@@ -42,7 +48,7 @@ export const Input: FC<InputProps> = ({
 				/>
             {type === 'password' && (
             <div className={styles.icon} onClick={handleVisible}>
-                {visible ? <EyeSlash color="rgba(20,23,34,0.400)" /> : <Eye color="rgba(20,23,34,0.400)" />}
+                {visible ? <Eye color="rgba(20,23,34,0.400)" /> : <EyeSlash color="rgba(20,23,34,0.400)" />}
             </div>
 				)}
             {error && <p className={styles.inputError}>{error}</p>}

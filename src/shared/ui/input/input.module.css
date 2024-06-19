@@ -27,7 +27,7 @@
     margin: 0;
     border-radius: 4px;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     font-style: normal;
     position: relative;
     text-overflow: ellipsis;
@@ -40,11 +40,16 @@
     color: var(--color-text-color-text-primary-heading-body-dark);
 }
 
-.input__typeError {
-    border-color: var(--color-system-color-system-error);
+.input:focus {
+    outline: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.input__typeError:focus {
+.input_typeError {
+    border: 1px solid var(--color-system-color-system-error);
+};
+ 
+
+.input_typeError:focus {
     outline: 2px solid var(--color-system-color-system-error);
 }
 

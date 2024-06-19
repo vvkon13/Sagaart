@@ -1,5 +1,5 @@
 
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import type { FormSignupProps } from './types';
 import { Input } from '../../../shared/ui/';
 import styles from './form-signup.module.css';
@@ -9,9 +9,9 @@ import { clsx } from 'clsx';
 
 
 export const FormFieldsSignup: FC<FormSignupProps> = ({
-	serverErrorText,
-	serverEmailError,
-	serverPasswordError,
+	serverErrorText='',
+	serverEmailError='',
+	serverPasswordError='',
 	setServerEmailError,
 	setServerPasswordError,
 }) => {
@@ -19,6 +19,12 @@ export const FormFieldsSignup: FC<FormSignupProps> = ({
 	const {
 		formState: { isValid, errors },
 	} = useFormContext();
+
+	const [isChecked, setIsChecked] = useState<boolean>(false);
+
+	const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setIsChecked(event.target.checked);
+	};
 
 	useEffect(() => {
 		errors.email?.message && setServerEmailError('');
@@ -30,8 +36,8 @@ export const FormFieldsSignup: FC<FormSignupProps> = ({
 
 	return (
     <div className={styles.section}>
-        <h1 className={clsx(styles.title,'text-style-heading-1')}>Регистрация</h1>
-        <p className={clsx(styles.subtitle,'text-style-body-l')}>Зарегистрируйтесь, чтобы получать персональные рекомендации </p>
+        <h1 className={clsx(styles.title, 'text-style-heading-1')}>Регистрация</h1>
+        <p className={clsx(styles.subtitle, 'text-style-body-l')}>Зарегистрируйтесь, чтобы получать персональные рекомендации </p>
         <div className={styles.container}>
             <div className={styles.input_list}>
                 <Input
@@ -50,7 +56,22 @@ export const FormFieldsSignup: FC<FormSignupProps> = ({
 						}
 					/>
             </div>
-            <Button className={styles.button} size='l' >Дальше</Button>
+            <label className={styles.checkbox}>
+                я согласен с политикой обработки персональных данных и правилами использования сервиса
+                <input
+						type="checkbox"
+						checked={isChecked}
+						onChange={handleCheckboxChange}
+					/>
+                <span></span>
+            </label>
+            <Button 
+			className={styles.button} 
+			size='xl' 
+			view='normal'
+			width='max'
+			disabled={!isChecked||!isValid}
+			> Дальше </Button>
             <span className={styles.server_error}>{serverErrorText}</span>
         </div>
     </div>
