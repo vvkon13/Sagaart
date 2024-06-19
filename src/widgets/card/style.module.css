@@ -65,7 +65,7 @@
     position: absolute;
     display: flex;
     width: 100%;
-    bottom: 95px;
+    bottom: 108px;
     margin: auto;
     flex-direction: column;
     height: 258px;
@@ -147,4 +147,26 @@
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+@media screen and (max-width: 1870px) {
+    .main {
+        width: 460px;
+    }
+
+    .modal__section { 
+        width: 95%;
+    }
+
+    .modal__button {
+        width: 80%;
+    }
+
+    
+}
+
+@media screen and (max-width: 1560px) {
+    .main {
+        width: 360px;
+    }
 }

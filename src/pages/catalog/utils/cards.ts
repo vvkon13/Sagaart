@@ -24,7 +24,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: '20x20',
@@ -60,7 +60,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: '20x20',
@@ -96,7 +96,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: '20x20',
@@ -132,7 +132,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: '20x20',
@@ -168,7 +168,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: '20x20',
@@ -204,7 +204,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: '20x20',
@@ -240,7 +240,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: '20x20',
@@ -276,7 +276,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -312,7 +312,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -348,7 +348,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -384,7 +384,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Large',
@@ -420,7 +420,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -456,7 +456,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -492,7 +492,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -528,7 +528,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -564,7 +564,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Large',
@@ -600,7 +600,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -636,7 +636,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -672,7 +672,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -708,7 +708,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Small',
@@ -744,7 +744,7 @@ export const cards: IProduct[] = [
         product_cost_category: 1,
         product_author: {
             productAuthor_id: 1,
-            productAuthor_name: 'Van Gog'
+            productAuthor_name: 'Van Gogh'
         },
         product_search_string: 'some',
         product_size: 'Large',
