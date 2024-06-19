@@ -28,7 +28,7 @@
 
 .container {
     padding: 0;
-    margin: 24px auto 0 auto;
+    margin: 24px auto;
     max-width: 520px;
     width: 100%;
     display: flex;
@@ -130,5 +130,22 @@
 .button:disabled {
     opacity: 0.3;
     --g-button-text-color: var(--color-background-background-page);
-    --g-button-background-color: var(--color-text-color-text-primary-heading+body-dark);
+    --g-button-background-color: var(--color-text-color-text-primary-heading-body-dark);
+}
+
+.transition {
+    margin: 0;
+    padding: 0;
+    font-family: 'TT Commons';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: var(--color-system-color-ghost);
+}
+
+.link {
+    font-weight: 600;
+    color: var(--color-text-color-text-button-org);
+    text-decoration: none;
 }

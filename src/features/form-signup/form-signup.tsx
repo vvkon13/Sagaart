@@ -1,5 +1,5 @@
 
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import { Form } from '../../shared/ui';
 import { FormFieldsSignup } from '../../entities/form-signup/ui/form-signup';
@@ -11,7 +11,7 @@ export const FormSignupFeature: FC = () => {
 	const [serverEmailError, setServerEmailError] = useState('');
 	const [serverPasswordError, setServerPasswordError] = useState('');
 	const handleSubmit = () => {
-		console.log('createUser error');
+		console.log('createUser');
 	};
 
 	return (

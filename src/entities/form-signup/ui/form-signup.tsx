@@ -6,6 +6,8 @@ import styles from './form-signup.module.css';
 import { useFormContext } from 'react-hook-form';
 import { Button } from '@gravity-ui/uikit';
 import { clsx } from 'clsx';
+import { Link } from 'react-router-dom';
+
 
 
 export const FormFieldsSignup: FC<FormSignupProps> = ({
@@ -66,7 +68,8 @@ export const FormFieldsSignup: FC<FormSignupProps> = ({
                 <span></span>
             </label>
             <Button 
-			className={styles.button} 
+			className={styles.button}
+			type='submit' 
 			size='xl' 
 			view='normal'
 			width='max'
@@ -74,6 +77,7 @@ export const FormFieldsSignup: FC<FormSignupProps> = ({
 			> Дальше </Button>
             <span className={styles.server_error}>{serverErrorText}</span>
         </div>
+        <p className={styles.transition}>У вас уже есть аккаунт? <Link  className={styles.link} to="/signin">Войти</Link></p>
     </div>
 	);
 };
