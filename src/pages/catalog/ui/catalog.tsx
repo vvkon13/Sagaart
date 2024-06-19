@@ -1,16 +1,44 @@
-import { Breadcrumbs, FirstDisplayedItemsCount, LastDisplayedItemsCount, Pagination, PaginationProps } from '@gravity-ui/uikit';
+import { Breadcrumbs, Button, FirstDisplayedItemsCount, LastDisplayedItemsCount, Pagination, PaginationProps } from '@gravity-ui/uikit';
 import React, { useState } from 'react';
 import { categories } from '../utils/categories';
 import Category from './category/category';
 import style from './style.module.css';
 import { cards } from '../utils/cards';
 import Card from '../../../widgets/card/card';
+import Sidebar from './filtration';
+import funnel from '../../../assets/icons/Funnel.svg';
+import Sort from './sort';
 import Filters from './filtration';
 
 
 const Catalog = (): JSX.Element => {
 
-    const [state, setState] = useState({page: 1, pageSize: 20});
+    const options = [
+        { label: 'Option 1', value: 'option1' },
+        { label: 'Option 2', value: 'option2' },
+        { label: 'Option 3', value: 'option3' },
+      ];
+
+    const [filters, setFilters] = useState({
+        price: 'any',
+        size: 'any',
+        category: 'any',
+        style: 'any',
+        year: 'any',
+        country: 'any',
+      });
+    
+      const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+    
+      const handleFilterChange = (newFilters: any) => {
+        setFilters(newFilters);
+      };
+    
+      const toggleSidebar = () => {
+        setIsSidebarVisible(!isSidebarVisible);
+      };
+
+    const [state, setState] = useState({page: 1, pageSize: cards.length});
 
     const handleUpdate: PaginationProps['onUpdate'] = (page, pageSize) =>
     setState((prevState) => ({...prevState, page, pageSize}));
@@ -38,19 +66,23 @@ const Catalog = (): JSX.Element => {
                         <Category title={category.title} key={index} />
                     ))}
                 </div>
-                <div>
-                    <div>
-
-                    </div>
-                    <Filters />
-                    <div className={style.gallery}>
-                        {cards.map(card => (
-                            <Card card={card} key={card.product_id}/>
-                        ))}
-                    </div>
+            </div>
+            <div>
+                <div className={style.filters}>
+                    <Button size='s' className={style.button} onClick={toggleSidebar}>
+                        <img src={funnel} alt='funnel' />
+                        Показать фильтры
+                    </Button>
+                    <Sort options={options}/>
+                </div>
+                <div className={style.gallery}>
+                    <Filters isVisible={isSidebarVisible} />
+                    {cards.map(card => (
+                        <Card card={card} key={card.product_id}/>
+                    ))}
                 </div>
             </div>
-            <Pagination page={1} pageSize={20} onUpdate={handleUpdate} />
+            <Pagination page={1} pageSize={5} total={cards.length} onUpdate={handleUpdate} />
         </section>
     );
 };

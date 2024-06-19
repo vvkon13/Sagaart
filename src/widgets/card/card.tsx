@@ -4,6 +4,9 @@ import style from './style.module.css';
 import { Button } from '@gravity-ui/uikit';
 import arrowup from '../../assets/icons/Arrow-up-outline.svg';
 import arrowdown from '../../assets/icons/Arrow-down-outline.svg';
+import { LineChart, Line, XAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import heart from '../../assets/icons/heart-card.svg';
+import heartNotActive from '../../assets/icons/headrt-cart-not-active.svg';
 
 interface Props {
     card: IProduct;
@@ -11,13 +14,31 @@ interface Props {
   }
 
 const Card: FC<Props> = ({ card }) => {
+
+    const [isLiked, setIsLiked] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
-    const toggleExpand = () => {
-        setIsExpanded(!isExpanded);
+    const toggleExpand = (value: boolean, setValue: (value: boolean) => void) => {
+        setValue(!value);
     };
+
+    const data = [
+        {
+          year: '2022',
+          price: 3000,
+        },
+        {
+            year: '2023',
+            price: 4000,
+          },
+        {
+          year: '2024',
+          price: 5000,
+        },
+      ];
 
     return (
         <div className={style.main}>
+            <img src={isLiked ? heart : heartNotActive} onClick={() => toggleExpand(isLiked, setIsLiked)} className={style.like} />
             <img className={style.img} src={card.product_jpeg} alt={card.product_name}/>
             {isExpanded && (
                 <div className={style.modal}>
@@ -53,6 +74,11 @@ const Card: FC<Props> = ({ card }) => {
                             </div>
                         </div>
                         <div>
+                            <LineChart width={225} height={150} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                                <XAxis dataKey="year" />
+                                <Tooltip />
+                                <Line dot={false} type="bump" dataKey="price" stroke="#141722" />
+                            </LineChart>
                         </div>
                     </div>
                     <Button className={style.modal__button} > Добавить </Button>
@@ -71,7 +97,7 @@ const Card: FC<Props> = ({ card }) => {
                         {card.product_cost_end}
                     </p>
                 </div>
-                <img src={isExpanded ? arrowdown : arrowup} onClick={toggleExpand} className={style.button} />
+                <img src={isExpanded ? arrowdown : arrowup} onClick={() => toggleExpand(isExpanded, setIsExpanded)} className={style.button} />
             </div>
         </div>
     );

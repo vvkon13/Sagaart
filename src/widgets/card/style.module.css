@@ -62,23 +62,25 @@
 
 .modal {
     position: absolute;
+    display: flex;
     width: 100%;
     bottom: 95px;
     margin: auto;
-    display: flex;
     flex-direction: column;
     height: 258px;
     background: linear-gradient(
-        0deg,                      
-        rgba(239, 233, 224, 1),   
-        rgba(239, 233, 224, 0.8),
-        rgba(239, 233, 224, 0.8) 
+        to bottom,                      
+        rgba(239, 233, 224, 80%) 0%,   
+        rgba(239, 233, 224, 100%) 71%,
+        rgba(239, 233, 224, 100%) 100%
     );
 }
 
 .modal__section { 
     width: 520px;
-    margin: auto
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .modal__button {
@@ -97,12 +99,6 @@
 
 .modal__button:hover {
     --g-button-border-color: #141722;
-}
-
-
-
-.modal_open {
-    display: flex;
 }
 
 .modal__main {
@@ -144,4 +140,10 @@
 
 .ul:last-child {
     align-items: end;
+}
+
+.like {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }

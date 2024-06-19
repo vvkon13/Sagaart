@@ -14,22 +14,32 @@
     margin: auto;
     justify-content: space-between;
     flex-direction: column;
+    border-bottom: solid #141722 1px;
 }
 
 .categories {
     display: flex;
     flex-wrap: wrap;
-    gap: 21px
+    gap: 21px;
+    padding-bottom: 50px;
 }
 
 .gallery {
-    /* display: flex;
-    gap: 0;
-    flex-direction: column;
-    flex-wrap: wrap; */
+    position: relative;
     columns: 3;
-    /* max-height: 2800px; */
-    /* align-content: start;
-    gap: 20px */
+}
+
+.button {
+    line-height: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'TT Commons';
+    text-transform: uppercase;
+    margin: 20px 0 30px;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
 }
 
