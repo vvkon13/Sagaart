@@ -195,6 +195,10 @@
     margin: 0;
 }
 
+.section_gallery__gallery {
+    columns: 3;
+}
+
 .section_design {
     width: 90vw;
     display: flex;

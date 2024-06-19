@@ -13,6 +13,8 @@ import image3 from '../../../assets/images/Image-3.png';
 import image4 from '../../../assets/images/Image-4.png';
 import design from '../../../assets/images/Desktop2.png';
 import art from '../../../assets/images/Desktop.png';
+import { cards } from '../../catalog/utils/cards';
+import Card from '../../../widgets/card/card';
 
 const Main = (): JSX.Element => {
     return (
@@ -114,7 +116,9 @@ const Main = (): JSX.Element => {
                     </p>
                 </div>
                 <div className={style.section_gallery__gallery}>
-
+                    {cards.map(card => (
+                        <Card card={card} key={card.product_id}/>
+                    ))}
                 </div>
             </section>
             <section className={style.section_design}>
