@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import style from './style.module.css';
-import { Radio, RadioGroup } from '@gravity-ui/uikit';
+import { Radio, RadioGroup, TextInput } from '@gravity-ui/uikit';
 import { options, options2 } from './constants';
+import search from '../../../../assets/icons/Loupe.svg';
 
 interface FiltersState {
     price: boolean;
@@ -49,10 +50,7 @@ const Filters = ({ isVisible }: {isVisible : boolean}) => {
                           </div>
                           <div>
                               {isOpen.size && (
-                                options.map(opt => (
-                                    // eslint-disable-next-line react/jsx-key
-                                    <Radio value={opt.value} content={opt.value} className={style.radio} />
-                                ))
+                                  <RadioGroup className={style.body} size="l" name="group1" defaultValue={options[0].value} options={options} direction="vertical"/>
                              )}
                           </div>
                       </div>
@@ -85,9 +83,9 @@ const Filters = ({ isVisible }: {isVisible : boolean}) => {
                               ГОД СОЗДАНИЯ
                           </div>
                           {isOpen.year && (
-                          <div className={style.body}>
-                              <label>От <input type="number" /></label>
-                              <label>До <input type="number" /></label>
+                          <div className={style.body_inputs}>
+                              <TextInput className={style.input} size='xl' placeholder='От'/>
+                              <TextInput className={style.input} size='xl' placeholder='До'/>
                           </div>
                           )}
                       </div>
@@ -97,8 +95,8 @@ const Filters = ({ isVisible }: {isVisible : boolean}) => {
                               СТРАНА АВТОРА
                           </div>
                           {isOpen.country && (
-                          <div className={style.body}>
-                              <input type="text" placeholder="Введите страну" />
+                          <div className={style.body_inputs}>
+                              <TextInput className={style.input} startContent={<img src={search} alt='serach'/>} size='xl' placeholder='Введите страну'/>
                           </div>
                           )}
                       </div>
