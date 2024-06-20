@@ -4,6 +4,11 @@ import style from './style.module.css';
 import benefit1 from '../../../assets/images/image-82.png';
 import benefit2 from '../../../assets/images/image-79.png';
 import benefit3 from '../../../assets/images/Immage.png';
+import SubscriptionBlock from './subscription-block';
+import price1 from '../../../assets/images/price1.png';
+import price2 from '../../../assets/images/price2.png';
+import price3 from '../../../assets/images/price3.png';
+import { Button } from '@gravity-ui/uikit';
 
 
 const Subscription = (): JSX.Element => {
@@ -96,15 +101,44 @@ const Subscription = (): JSX.Element => {
                 </div>
             </section>
             <section className={style.section_subscription}>
-                <h2>
-
+                <h2 className={style.section_subscription__title}>
+                    Выберите подписку
                 </h2>
-                <div>
+                <div className={style.section_subscription__subsc}>
+                    <SubscriptionBlock 
+                        image={price1}
+                        price='3 000 ₽'
+                        month='1 месяц'
+                    />
+                    <SubscriptionBlock 
+                        image={price2}
+                        price='12 000 ₽'
+                        month='6 месяцев'
 
+                    />
+                    <SubscriptionBlock 
+                         image={price3}
+                         price='18 000 ₽'
+                         month='12 месяцев'
+
+                    />
                 </div>
             </section>
             <section className={style.section_questions}>
-                
+                <div className={style.section_questions__block}>
+                    <p className={style.section_questions__desc}>
+                        Служба поддержки
+                    </p>
+                    <h2 className={style.title}>
+                        Остались вопросы?
+                    </h2>
+                    <p className={style.section_questions__desc}>
+                        Ответим в течении 6 часов
+                    </p>
+                    <Button size='xl' className={style.section_questions__button}>
+                        написать
+                    </Button>
+                </div>
             </section>
         </div>
     );
