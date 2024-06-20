@@ -34,7 +34,7 @@
     height: 44px;
     border: none;
     font: inherit;
-    color: inherit;
+    color: #141722;
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -44,6 +44,10 @@
     font-weight: 500;
     line-height: 100%;
     align-items: center;
+}
+
+.link {
+    text-decoration:none;
 }
 
 
