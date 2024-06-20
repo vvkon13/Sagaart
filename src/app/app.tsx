@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import style from './app.module.css';
 import Header from '../widgets/header';
 import Footer from '../widgets/footer';
@@ -18,26 +18,26 @@ import Feedback from '../pages/feedback/ui/feedback';
 
 function App() {
 
-  return (
-      <>
-          <Header />
-          <Routes>
-              <Route path='/' element={<Main />} />
-              <Route path='/catalog' element={<Catalog />} />
-              <Route path='/subscription' element={<Subscription />}/>
-              <Route path='/product-card' element={<ProductCard/>}/>
-              <Route path='/signup' element={<SignUp />} />
-              <Route path='/signin' element={<SignIn />} />
-              <Route path='/profile' element={<Personal />} />
-              <Route path='/review' element={<UploadingAnObject />} />
-              <Route path='/reset-password' element={<ResetPassword />} />
-              <Route path='/new-password-submition' element={<NewPasswordSubmition />} />
-              <Route path='/feedback' element={<Feedback />} />
-              <Route path='/reset-password-submition' element={<ResetPasswordSubmition />} />
-          </Routes>
-          <Footer />
-      </>
-  );
+    return (
+        <>
+            <Header />
+            <Routes>
+                <Route path='/' element={<Main />} />
+                <Route path='/catalog' element={<Catalog />} />
+                <Route path='/subscription' element={<Subscription />} />
+                <Route path='/product-card' element={<ProductCard />} />
+                <Route path='/signup' element={<SignUp />} />
+                <Route path='/signin' element={<SignIn />} />
+                <Route path='/profile' element={<Personal />} />
+                <Route path='/review' element={<UploadingAnObject />} />
+                <Route path='/reset-password' element={<ResetPassword />} />
+                <Route path='/new-password-submition' element={<NewPasswordSubmition />} />
+                <Route path='/feedback' element={<Feedback />} />
+                <Route path='/reset-password-submition' element={<ResetPasswordSubmition />} />
+            </Routes>
+            <Footer />
+        </>
+    );
 }
 
 export default App;
