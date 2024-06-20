@@ -22,7 +22,7 @@ const slides = [
 ];
 
 const Slider = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
 
   const handleButtonClick = (action: string) => {
     setCount(action === 'next' ? count + 1 : count - 1);
@@ -49,7 +49,7 @@ const Slider = () => {
           <div className={style.image_block}>
               <img src={currentSlide.img} className={count === 1 ? style.image : ''} />
               {count === 1 && (
-              <Button size='xl' className={style.button_image}>получить аналитику</Button>
+                  <Button size='xl' className={style.button_image}>получить аналитику</Button>
               )}
           </div>
       </div>

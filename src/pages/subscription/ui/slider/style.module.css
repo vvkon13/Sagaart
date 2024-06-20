@@ -9,7 +9,7 @@
 }
 
 .info {
-    width: 464px;
+    max-width: 464px;
     height: 740px;
     margin: 10px;
     padding: 20px;
@@ -45,7 +45,7 @@
 
 .image_block {
     margin-left: 35px;
-    width: 1120px;
+    width: 65%;
     height: 664px;
     background-color: #EFE9E0;
     border-radius: 16px;
