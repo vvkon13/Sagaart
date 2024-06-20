@@ -1,0 +1,16 @@
+.main {
+    padding: 20px;
+    width: 100vw;
+    display: flex;
+    gap: 10px;
+    background-color: #EFE9E0;
+    flex-direction: column;
+}
+
+.section_slider {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 30px auto 0;
+}
