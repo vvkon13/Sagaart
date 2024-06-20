@@ -41,6 +41,7 @@
     padding: 40px 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .section_benefits__info {
@@ -89,6 +90,7 @@
 .section_subscription__subsc {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .section_subscription__title {
