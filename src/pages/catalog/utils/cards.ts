@@ -1,4 +1,4 @@
-import { IProduct } from '../../../widgets/card/types';
+import { IProduct } from '../../../shared/entities/products';
 
 export const cards: IProduct[] = [
 	{
