@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './style.module.css';
-import some from '../../../../assets/images/15.png';
 
-const Category = ({ title}: {title: string}) => {
+// eslint-disable-next-line react/prop-types
+const Category = ({ title, image }: { title: any, image: any }) => {
     return (
         <div className={style.main}>
-            <img className={style.img} src={some} alt={title}/>
+            <img className={style.img} src={image} alt={title}/>
             <button className={style.button}>{title}</button>
         </div>
     );

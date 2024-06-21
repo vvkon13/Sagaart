@@ -1,22 +1,21 @@
-import { Breadcrumbs, Button, FirstDisplayedItemsCount, LastDisplayedItemsCount, Pagination, PaginationProps } from '@gravity-ui/uikit';
+import { Button,  Pagination, PaginationProps } from '@gravity-ui/uikit';
 import React, { useState } from 'react';
-import { categories } from '../utils/categories';
-import Category from './category/category';
 import style from './style.module.css';
 import { cards } from '../utils/cards';
 import Card from '../../../widgets/card/card';
-import Sidebar from './filtration';
 import funnel from '../../../assets/icons/Funnel.svg';
 import Sort from './sort';
 import Filters from './filtration';
-
+import Categories from './categories';
+import BreadcrumbsComponent from './bread-crumbs';
 
 const Catalog = (): JSX.Element => {
 
     const options = [
-        { label: 'Option 1', value: 'option1' },
-        { label: 'Option 2', value: 'option2' },
-        { label: 'Option 3', value: 'option3' },
+        { label: 'Рекомендуемые', value: 'option1' },
+        { label: 'Недавно добавленные', value: 'option2' },
+        { label: 'Цена по возростанию', value: 'option3' },
+        { label: 'Цена по убыванию', value: 'option4' },
       ];
 
     const [filters, setFilters] = useState({
@@ -48,24 +47,9 @@ const Catalog = (): JSX.Element => {
         <section className={style.main}>
             <div className={style.container}>
                 <div>
-                    <Breadcrumbs 
-                    items={[
-                        {
-                            text: 'Каталог',
-                            // eslint-disable-next-line @typescript-eslint/no-empty-function
-                            action: () => {},
-                        },
-                    ]}
-                    renderItemDivider={() => '>'}
-                    firstDisplayedItemsCount={FirstDisplayedItemsCount.One}
-                    lastDisplayedItemsCount={LastDisplayedItemsCount.One}
-                    />
+                    <BreadcrumbsComponent />
                 </div>
-                <div className={style.categories}>
-                    {categories.map((category, index: number) => (
-                        <Category title={category.title} key={index} />
-                    ))}
-                </div>
+                <Categories />
             </div>
             <div>
                 <div className={style.filters}>

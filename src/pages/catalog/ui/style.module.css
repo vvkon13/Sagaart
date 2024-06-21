@@ -17,13 +17,6 @@
     border-bottom: solid #141722 1px;
 }
 
-.categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 21px;
-    padding-bottom: 50px;
-}
-
 .gallery {
     position: relative;
     columns: 3;
