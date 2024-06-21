@@ -1,7 +1,7 @@
 .main {
     display: flex;
-    width: 270px;
-    height: 301px;
+    max-width: 270px;
+    max-height: 301px;
     flex-direction: column;
     align-items: center;
 }
@@ -34,4 +34,34 @@
 .button:hover {
     transition: 0.05s;
     border-bottom: solid #141722 1px;
+}
+
+@media screen and (max-width: 1919px) {
+    .main {
+        max-width: 220px;
+        max-height: 231px;
+    }
+
+    .img {
+        background-size: cover;
+        background-position: top;
+        width: 220px;
+        height: 220px;
+        border-radius: 4px;
+    }
+}
+
+@media screen and (max-width: 1590px) {
+    .main {
+        max-width: 180px;
+        max-height: 191px;
+    }
+
+    .img {
+        background-size: cover;
+        background-position: top;
+        width: 180px;
+        height: 161px;
+        border-radius: 4px;
+    }
 }
