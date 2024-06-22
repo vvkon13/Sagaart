@@ -11,6 +11,7 @@ export const Input: FC<InputProps> = ({
 	error = null,
 	className,
 	type = 'text',
+	style,
 	...props
 }) => {
 	const [visible, setVisible] = useState(false);
@@ -43,6 +44,7 @@ export const Input: FC<InputProps> = ({
 						[styles.input_typeSucces]: Boolean(error) === false,
 						[styles.input_typeError]: Boolean(error) === true,
 					})}
+					style={style}
 					{...props}
 					onBlur={handleBlur}
 				/>
