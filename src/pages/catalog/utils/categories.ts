@@ -1,33 +1,33 @@
-import one from '../../../assets/images/15.png';
-import two from '../../../assets/images/19.png';
-import three from '../../../assets/images/21.png';
-import four from'../../../assets/images/20.png';
-import five from '../../../assets/images/18.png';
-import six from '.../../../assets/images/scale_1200 1.png';
+import image1 from '../../../../assets/images/15.png';
+import image2 from '../../../../assets/images/19.png';
+import image3 from '../../../../assets/images/21.png';
+import image4 from '../../../../assets/images/20.png';
+import image5 from '../../../../assets/images/18.png';
+import image6 from '../../../../assets/images/18.png';
 
 export const categories = [
 	{
 		title: 'Живопись',
-		img: {one}
+		img: {image1},
 	},
 	{
 		title: 'Современное искусство',
-		img: {two}
+		img: {image1},
 	},
 	{
 		title: 'Минимализм',
-		img: {two}
+		img: {image1},
 	},
 	{
 		title: 'Графика',
-		img: {two}
+		img: {image1},
 	},
 	{
 		title: 'Фотография',
-		img: {two}
+		img: {image1},
 	},
 	{
 		title: 'Художники',
-		img: {two}
+		img: {image1},
 	},
 ];

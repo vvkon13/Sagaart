@@ -8,6 +8,7 @@ import heart from '../../assets/icons/Heart.svg';
 import Logo from '../logo';
 import SerachInput from '../search-input';
 import { SearchInputType } from '../search-input/types';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -31,13 +32,21 @@ const Header = () => {
             </div>
             <div className={style.navigation}>
                 <div className={style.buttons}>
-                    <button className={style.button}>Главная</button>
-                    <button className={style.button}>Каталог</button>
-                    <button className={style.button}>Подписка на аналитику</button>
-                    <button className={style.button}>
-                        <img className={style.button__image} src={color} alt='some'/>
-                        Оценка стоимости
-                    </button>
+                    <NavLink to='/' className={style.link} >
+                        <button className={style.button}>Главная</button>
+                    </NavLink>
+                    <NavLink to='/catalog' className={style.link} >
+                        <button className={style.button}>Каталог</button>
+                    </NavLink>
+                    <NavLink to='/subscription' className={style.link} >
+                        <button className={style.button}>Подписка на аналитику</button>
+                    </NavLink>
+                    <NavLink to='/review' className={style.link} >
+                        <button className={style.button}>
+                            <img className={style.button__image} src={color} alt='some'/>
+                            Оценка стоимости
+                        </button>
+                    </NavLink>
                     <button className={style.button} disabled>Новости</button>
                     <button className={style.button} disabled>Price database</button>
                 </div>

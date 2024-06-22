@@ -44,7 +44,7 @@ export interface IProduct {
     product_analytics: ProductAnalytics;
 }
   
-interface Response {
+export interface CatalogResponse {
     count: number;
     next: string;
     previous: string;

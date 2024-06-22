@@ -1,5 +1,5 @@
 {
-  "homepage": "https://vvkon13.github.io/Sagaart/",
+  "homepage": "https://vvkon13.github.io/Sagaart",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
@@ -33,17 +33,17 @@
     "workbox-streams": "^6.6.0",
     "yup": "^1.4.0"
   },
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
-  "start": "react-scripts start",
-  "build": "CI='' react-scripts build", 
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --quiet", 
-  "lint:debug": "eslint 'src/**/*.{js,jsx,ts,tsx}' --debug", 
-  "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix" 
-},
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "CI='' react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --quiet",
+    "lint:debug": "eslint 'src/**/*.{js,jsx,ts,tsx}' --debug",
+    "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
