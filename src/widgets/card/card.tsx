@@ -1,4 +1,4 @@
-import { IProduct } from './types';
+import { IProduct } from '../../shared/entities/products';
 import React, {FC, useState} from 'react';
 import style from './style.module.css';
 import { Button } from '@gravity-ui/uikit';
