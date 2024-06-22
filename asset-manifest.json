@@ -1,12 +1,17 @@
 {
   "files": {
-    "main.css": "/Sagaart/static/css/main.6808f56a.css",
-    "main.js": "/Sagaart/static/js/main.3bc233d6.js",
+    "main.css": "/Sagaart/static/css/main.bf45615f.css",
+    "main.js": "/Sagaart/static/js/main.7b074265.js",
     "static/media/15.png": "/Sagaart/static/media/15.a6e45b231123439ac45a.png",
     "static/media/picture.png": "/Sagaart/static/media/picture.d98979a6867d183cd78e.png",
+    "static/media/Media.png": "/Sagaart/static/media/Media.75c5909cede5088f7033.png",
     "static/media/19.png": "/Sagaart/static/media/19.2c276077d3415226bf10.png",
+    "static/media/Immage.png": "/Sagaart/static/media/Immage.b0299c88d5a96bf78094.png",
+    "static/media/image-79.png": "/Sagaart/static/media/image-79.60914330638536d839b9.png",
     "static/media/Desktop.png": "/Sagaart/static/media/Desktop.8a6180fe0462accd16aa.png",
+    "static/media/image-82.png": "/Sagaart/static/media/image-82.8acc69419e2ea5d2aa44.png",
     "static/media/Desktop2.png": "/Sagaart/static/media/Desktop2.30715c6d748b3c3d96f6.png",
+    "static/media/Analytics.png": "/Sagaart/static/media/Analytics.9138f869e927fdab056b.png",
     "static/media/Inter-Black.ttf": "/Sagaart/static/media/Inter-Black.83d81b169bedf85385f2.ttf",
     "static/media/chart-main.png": "/Sagaart/static/media/chart-main.08210f0998fae4be5f33.png",
     "static/media/registration.png": "/Sagaart/static/media/registration.eb97e136869eb854ab28.png",
@@ -16,7 +21,10 @@
     "static/media/TT-Commons-Regular.otf": "/Sagaart/static/media/TT-Commons-Regular.ae5bbab36817d6276df8.otf",
     "static/media/Image-2.png": "/Sagaart/static/media/Image-2.abb73536be92980d9275.png",
     "static/media/Image.png": "/Sagaart/static/media/Image.7ce9fdd36b360d1d677e.png",
+    "static/media/price2.png": "/Sagaart/static/media/price2.c64d5918f898b4dd238f.png",
+    "static/media/price3.png": "/Sagaart/static/media/price3.5ccbc5e26e20064213ca.png",
     "static/media/Image-3.png": "/Sagaart/static/media/Image-3.1f567140104ac58bd731.png",
+    "static/media/price1.png": "/Sagaart/static/media/price1.f6ffe5e56d712c877462.png",
     "static/media/Mail.svg": "/Sagaart/static/media/Mail.1bee8960a05e631ceeee4ee54e2237da.svg",
     "static/media/Color.svg": "/Sagaart/static/media/Color.69c0756deb5cbae6b220c2173e4eb38b.svg",
     "static/media/Person.svg": "/Sagaart/static/media/Person.49d9858624294ba36bb58a1ce5517819.svg",
@@ -33,11 +41,11 @@
     "index.html": "/Sagaart/index.html",
     "static/media/heart-card.svg": "/Sagaart/static/media/heart-card.deeeec6be88e9cab97ed40302eda9908.svg",
     "static/media/Loupe.svg": "/Sagaart/static/media/Loupe.b7cc4433b13eb25ed5df0b045fbf7dd3.svg",
-    "main.6808f56a.css.map": "/Sagaart/static/css/main.6808f56a.css.map",
-    "main.3bc233d6.js.map": "/Sagaart/static/js/main.3bc233d6.js.map"
+    "main.bf45615f.css.map": "/Sagaart/static/css/main.bf45615f.css.map",
+    "main.7b074265.js.map": "/Sagaart/static/js/main.7b074265.js.map"
   },
   "entrypoints": [
-    "static/css/main.6808f56a.css",
-    "static/js/main.3bc233d6.js"
+    "static/css/main.bf45615f.css",
+    "static/js/main.7b074265.js"
   ]
 }
