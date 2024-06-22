@@ -8,10 +8,9 @@ import FormSignupSchema from '../../shared/utils/validation-schemas/form-signup-
 export const FormSigninFeature: FC = () => {
 
 	const [serverErrorText, setServerErrorText] = useState('');
-	const [serverEmailError, setServerEmailError] = useState('');
-	const [serverPasswordError, setServerPasswordError] = useState('');
+
 	const handleSubmit = () => {
-		console.log('createUser');
+		console.log('enter');
 	};
 
 	return (

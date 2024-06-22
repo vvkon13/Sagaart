@@ -4,7 +4,7 @@ import styles from './sign-in.module.css';
 import { FormSigninFeature } from '../../../features/form-signin/form-signin';
 import  auth from '../../../assets/images/auth.png';
 
-const SignUp = (): JSX.Element => {
+const SignIn = (): JSX.Element => {
     return (
         <section className={styles.sign_in}>
             <SignInUp
@@ -15,4 +15,4 @@ const SignUp = (): JSX.Element => {
         </section>
     );
 };
-export default SignUp;
+export default SignIn;
