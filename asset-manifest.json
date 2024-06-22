@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Sagaart/static/css/main.7ca54836.css",
-    "main.js": "/Sagaart/static/js/main.1c69356b.js",
+    "main.css": "/Sagaart/static/css/main.5b3d5422.css",
+    "main.js": "/Sagaart/static/js/main.8372ae8a.js",
     "static/media/20.png": "/Sagaart/static/media/20.0aca442ec0472f2bff6d.png",
     "static/media/18.png": "/Sagaart/static/media/18.126ca308eb4d4f52906f.png",
     "static/media/15.png": "/Sagaart/static/media/15.a6e45b231123439ac45a.png",
@@ -26,6 +26,7 @@
     "static/media/TT-Commons-Regular.otf": "/Sagaart/static/media/TT-Commons-Regular.ae5bbab36817d6276df8.otf",
     "static/media/Image-2.png": "/Sagaart/static/media/Image-2.abb73536be92980d9275.png",
     "static/media/Image.png": "/Sagaart/static/media/Image.7ce9fdd36b360d1d677e.png",
+    "static/media/feedback.png": "/Sagaart/static/media/feedback.d61247ac173069272bcc.png",
     "static/media/price2.png": "/Sagaart/static/media/price2.c64d5918f898b4dd238f.png",
     "static/media/price3.png": "/Sagaart/static/media/price3.5ccbc5e26e20064213ca.png",
     "static/media/Image-3.png": "/Sagaart/static/media/Image-3.1f567140104ac58bd731.png",
@@ -46,11 +47,11 @@
     "index.html": "/Sagaart/index.html",
     "static/media/heart-card.svg": "/Sagaart/static/media/heart-card.deeeec6be88e9cab97ed40302eda9908.svg",
     "static/media/Loupe.svg": "/Sagaart/static/media/Loupe.b7cc4433b13eb25ed5df0b045fbf7dd3.svg",
-    "main.7ca54836.css.map": "/Sagaart/static/css/main.7ca54836.css.map",
-    "main.1c69356b.js.map": "/Sagaart/static/js/main.1c69356b.js.map"
+    "main.5b3d5422.css.map": "/Sagaart/static/css/main.5b3d5422.css.map",
+    "main.8372ae8a.js.map": "/Sagaart/static/js/main.8372ae8a.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ca54836.css",
-    "static/js/main.1c69356b.js"
+    "static/css/main.5b3d5422.css",
+    "static/js/main.8372ae8a.js"
   ]
 }
