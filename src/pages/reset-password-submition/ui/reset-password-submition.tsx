@@ -1,14 +1,14 @@
 import React from 'react';
 import {SignInUp} from '../../../widgets/sign-in-up/index';
-import styles from './sign-in.module.css';
-import { FormSigninFeature } from '../../../features/form-signin/form-signin';
+import styles from './reset-password-submition.module.css';
+import { FormResetPasswordSubmition } from '../../../entities/form-reset-password-submition/index';
 import  auth from '../../../assets/images/auth.png';
 
 const  ResetPasswordSubmition = (): JSX.Element => {
     return (
-        <section className={styles.sign_in}>
+        <section className={styles.section}>
             <SignInUp
-             formComponent={FormSigninFeature}
+             formComponent={FormResetPasswordSubmition}
              imageSrc={auth}
              imageAlt='horses'
             />

@@ -1,83 +1,77 @@
 
-import React, { FC, useEffect, useState } from 'react';
-import type { FormSignupProps } from './types';
+import React, { FC, useEffect } from 'react';
+import type { FormChangePasswordProps } from './types';
 import { Input } from '../../../shared/ui';
-import styles from './form-signup.module.css';
+import styles from './form-change-password.module.css';
 import { useFormContext } from 'react-hook-form';
 import { Button } from '@gravity-ui/uikit';
 import { clsx } from 'clsx';
-import { Link } from 'react-router-dom';
 
 
 
-export const FormFieldsSignup: FC<FormSignupProps> = ({
-	serverErrorText='',
-	serverEmailError='',
-	serverPasswordError='',
-	setServerEmailError,
+export const FormChangePasswordFields: FC<FormChangePasswordProps> = ({
+	serverPasswordError,
 	setServerPasswordError,
+	isSubmitSuccessfulReset,
+	isSubmitDisabled,
+	setSubmitSuccessfulReset,
 }) => {
 
 	const {
+		reset,
 		formState: { isValid, errors },
 	} = useFormContext();
 
-	const [isChecked, setIsChecked] = useState<boolean>(false);
-
-	const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setIsChecked(event.target.checked);
-	};
-
-	useEffect(() => {
-		errors.email?.message && setServerEmailError('');
-	}, [errors.email?.message]);
 
 	useEffect(() => {
 		errors.password?.message && setServerPasswordError('');
 	}, [errors.password?.message]);
 
+	useEffect(() => {
+		if (isSubmitSuccessfulReset) {
+			reset();
+			setSubmitSuccessfulReset(false);
+		}
+	}, [isSubmitSuccessfulReset]); 
+
 	return (
     <div className={styles.section}>
-        <h1 className={clsx(styles.title, 'text-style-heading-1')}>Регистрация</h1>
-        <p className={clsx(styles.subtitle, 'text-style-body-l')}>Зарегистрируйтесь, чтобы получать персональные рекомендации </p>
+        <h1 className={clsx(styles.title, 'text-style-heading-1')}>Введите пароль</h1>
+        <p className={clsx(styles.subtitle, 'text-style-body-l')}>Ваш пароль сброшен, введите новый </p>
         <div className={styles.container}>
             <div className={styles.input_list}>
+
                 <Input
-						name="email"
-						labelName="E-mail"
-						error={errors.email ? `${errors.email?.message}` : serverEmailError}
-					/>
-                <Input
-						name="password"
+						name="newPassword"
 						labelName="Пароль"
 						type={'password'}
 						error={
-							errors.password
-								? `${errors.password?.message}`
+							errors.newPassword
+								? `${errors.newPassword?.message}`
+								: serverPasswordError
+						}
+					/>
+                <Input
+						name="repeatNewPassword"
+						labelName="Повторите пароль"
+						type={'password'}
+						error={
+							errors.repeatNewPassword
+								? `${errors.repeatNewPassword?.message}`
 								: serverPasswordError
 						}
 					/>
             </div>
-            <label className={styles.checkbox}>
-                я согласен с политикой обработки персональных данных и правилами использования сервиса
-                <input
-						type="checkbox"
-						checked={isChecked}
-						onChange={handleCheckboxChange}
-					/>
-                <span></span>
-            </label>
-            <Button 
-			className={styles.button}
-			type='submit' 
-			size='xl' 
-			view='normal'
-			width='max'
-			disabled={!isChecked||!isValid}
-			> Дальше </Button>
-            <span className={styles.server_error}>{serverErrorText}</span>
+
+            <Button
+					className={styles.button}
+					type='submit'
+					size='xl'
+					view='normal'
+					width='max'
+					disabled={!isValid || isSubmitDisabled}
+				> Дальше </Button>
         </div>
-        <p className={styles.transition}>У вас уже есть аккаунт? <Link  className={styles.link} to="/signin">Войти</Link></p>
     </div>
 	);
 };
