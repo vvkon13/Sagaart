@@ -4,7 +4,7 @@ import style from './style.module.css';
 import { Button } from '@gravity-ui/uikit';
 import arrowup from '../../assets/icons/Arrow-up-outline.svg';
 import arrowdown from '../../assets/icons/Arrow-down-outline.svg';
-import { LineChart, Line, XAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip } from 'recharts';
 import heart from '../../assets/icons/heart-card.svg';
 import heartNotActive from '../../assets/icons/headrt-cart-not-active.svg';
 
