@@ -7,6 +7,7 @@ import arrowdown from '../../assets/icons/Arrow-down-outline.svg';
 import { LineChart, Line, XAxis, Tooltip } from 'recharts';
 import heart from '../../assets/icons/heart-card.svg';
 import heartNotActive from '../../assets/icons/headrt-cart-not-active.svg';
+import CustomTooltip from '../../shared/ui/chart/custom-tooltip';
 
 interface Props {
     card: IProduct;
@@ -76,8 +77,15 @@ const Card: FC<Props> = ({ card }) => {
                         <div>
                             <LineChart width={225} height={150} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                                 <XAxis dataKey="year" />
-                                <Tooltip />
-                                <Line dot={false} type="bump" dataKey="price" stroke="#141722" />
+                                <Tooltip content={<CustomTooltip />} />
+                                <Line 
+                                    type="bump" 
+                                    dataKey="price" 
+                                    stroke="#979594" 
+                                    activeDot={{ r: 4, strokeWidth: 0, fill: '#141722' }}
+                                    dot={{ r: 4, strokeWidth: 0, fill: '#979594' }}
+                                    strokeWidth={2}
+                                />
                             </LineChart>
                         </div>
                     </div>

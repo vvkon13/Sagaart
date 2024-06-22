@@ -1,4 +1,4 @@
-import { IProductDetails } from '../entities/product-details';
+import { Product } from '../entities/product-details';
 import { CatalogResponse } from '../entities/products';
 import { base_url } from '../utils/constants';
 import { checkResponse } from './utils';
@@ -22,5 +22,5 @@ export const getProduct = async (id : number) => {
         }
     }
     );
-	return checkResponse<IProductDetails>(res);
+	return checkResponse<Product>(res);
 };
