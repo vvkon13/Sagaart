@@ -43,11 +43,9 @@
     }
 
     .img {
-        background-size: cover;
-        background-position: top;
         width: 220px;
         height: 220px;
-        border-radius: 4px;
+        border-radius: 2px;
     }
 }
 
@@ -58,10 +56,8 @@
     }
 
     .img {
-        background-size: cover;
-        background-position: top;
         width: 180px;
         height: 161px;
-        border-radius: 4px;
+        border-radius: 2px;
     }
 }
