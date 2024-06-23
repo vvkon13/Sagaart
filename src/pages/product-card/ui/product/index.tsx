@@ -14,10 +14,10 @@ const  price: RadioGroupOption[] = [
     return(
         <div className={style.main}>
             <div className={style.image__container}>
-                <img className={style.full_image} src={product.product_jpeg1}/>
+                <img className={style.full_image} src={product.product_jpeg1} />
             </div>
             <div className={style.image__container}>
-                <img className={style.cropped_image} src={product.product_jpeg2}/>
+                <img className={style.cropped_image} src={product.product_jpeg2} />
                 <div className={style.block}>
                     <div className={style.flex}>
                         <h3 className={style.title}>    

@@ -3,8 +3,8 @@ import { Product } from '../../../../shared/entities/product-details';
 export const product: Product = {
     'product_id': 10,
     'product_name': 'Мона Лиза',
-    'product_jpeg1': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/250px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg',
-    'product_jpeg2': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/250px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg',
+    'product_jpeg1': 'https://losko.ru/wp-content/uploads/2019/11/cover-1.jpg',
+    'product_jpeg2': 'https://losko.ru/wp-content/uploads/2019/11/cover-1.jpg',
     'product_category': {
       'productCategory_id': 1,
       'productCategory_name': 'Живопись'

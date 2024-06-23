@@ -38,6 +38,8 @@ const data = [
 
 const PriceHistory = () => {
 
+    const hideZero = (tick: number) => (tick === 0 ? '' : tick);
+
     return (
         <LineChart
             width={800}
@@ -51,8 +53,8 @@ const PriceHistory = () => {
             }}
         >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
-            <YAxis />
+            <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{ fill: 'var(--color-system-color-ghost)', fontSize: 12, fontFamily: 'TT Commons' }} />
+            <YAxis dataKey="price" axisLine={false} tickLine={false} tick={{ fill: 'var(--color-system-color-ghost)', fontSize: 12, fontFamily: 'TT Commons' }} />
             <Tooltip content={<CustomTooltip />} />
             <Line
                 type="monotone" 

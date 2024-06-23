@@ -5,17 +5,16 @@ import style from './style.module.css';
 interface ExpandableSectionProps {
     childComponent: JSX.Element;
     title: string;
+    size: string
 }
 
-const ExpandableSection = ({ childComponent, title }: ExpandableSectionProps) => {
+const ExpandableSection = ({ childComponent, title, size }: ExpandableSectionProps) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
-    const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setIsOpen(false);
-    };
+    const classSize = size === 'big' ?  style.dropdown_big : '' ;
 
     return (
-        <div className={style.dropdown}>
+        <div className={`${style.dropdown} ${classSize}`}>
             <h3 onClick={() => setIsOpen(!isOpen)} className={style.title}>
                 {title}
             </h3>
