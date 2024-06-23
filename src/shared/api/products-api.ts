@@ -1,5 +1,5 @@
-import { Product } from '../entities/product-details';
-import { CatalogResponse } from '../entities/products';
+import { ArtworkDetails } from '../entities/product-details';
+import { Artwork } from '../entities/products';
 import { base_url } from '../utils/constants';
 import { checkResponse } from './utils';
 
@@ -11,7 +11,7 @@ export const getProducts = async () => {
         }
     }
     );
-	return checkResponse<CatalogResponse>(res);
+	return checkResponse<Artwork[]>(res);
 };
 
 export const getProduct = async (id : number) => {
@@ -22,5 +22,5 @@ export const getProduct = async (id : number) => {
         }
     }
     );
-	return checkResponse<Product>(res);
+	return checkResponse<ArtworkDetails>(res);
 };

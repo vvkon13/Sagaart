@@ -117,7 +117,7 @@ const Main = (): JSX.Element => {
                 </div>
                 <div className={style.section_gallery__gallery}>
                     {cards.map(card => (
-                        <Card card={card} key={card.product_id}/>
+                        <Card card={card} key={card.id}/>
                     ))}
                 </div>
             </section>

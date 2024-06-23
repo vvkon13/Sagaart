@@ -62,7 +62,7 @@ const Catalog = (): JSX.Element => {
                 <div className={style.gallery}>
                     <Filters isVisible={isSidebarVisible} />
                     {cards.map(card => (
-                        <Card card={card} key={card.product_id}/>
+                        <Card card={card} key={card.id}/>
                     ))}
                 </div>
             </div>

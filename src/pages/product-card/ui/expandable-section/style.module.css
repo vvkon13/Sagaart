@@ -4,6 +4,14 @@
     display: inline-block;
 }
 
+.main {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #141722;
+    margin-bottom: 10px;
+}
+
 .dropdown_big {
     width: 100%;
 }
@@ -20,8 +28,5 @@
 .title {
     composes: text-style-caption from '../../../../index.css';
     text-transform: uppercase;
-    width: 95%;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #141722;
 }
   

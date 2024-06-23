@@ -1,6 +1,7 @@
 import { Button } from '@gravity-ui/uikit';
 import React from 'react';
 import style from './style.module.css';
+import { NavLink } from 'react-router-dom';
 
 const NoSubscription = () => {
     return (
@@ -12,9 +13,11 @@ const NoSubscription = () => {
                 <p className={style.desc}>
                     Наш алгоритм на основе огромной базы данных поможет определить справедливую цену  арт-объекта и отобразит ее инвестиционную привлекательность для вас
                 </p>
-                <Button className={style.button}>
-                    Узнать подробнее
-                </Button>
+                <NavLink to='/subscription'>
+                    <Button size='xl' className={style.button}>
+                        Узнать подробнее
+                    </Button>
+                </NavLink>
             </div>
         </div>
     );

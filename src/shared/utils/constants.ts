@@ -1,1 +1,1 @@
-export const base_url = 'http://localhost:3000/'; //TODO: переделать на правильный 
+export const base_url = 'http://158.160.155.74:8000/api/';

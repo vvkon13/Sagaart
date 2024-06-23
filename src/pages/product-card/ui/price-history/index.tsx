@@ -1,7 +1,4 @@
 import React from 'react';
-import InfoPoint from '../info-point';
-import { ProductAuthor } from '../../../../shared/entities/product-details';
-import style from './style.module.css';
 import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import CustomTooltip from '../../../../shared/ui/chart/custom-tooltip';
 

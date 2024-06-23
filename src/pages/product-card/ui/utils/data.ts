@@ -1,67 +1,57 @@
-import { Product } from '../../../../shared/entities/product-details';
+import { ArtworkDetails } from '../../../../shared/entities/product-details';
 
-export const product: Product = {
-    'product_id': 10,
-    'product_name': 'Мона Лиза',
-    'product_jpeg1': 'https://losko.ru/wp-content/uploads/2019/11/cover-1.jpg',
-    'product_jpeg2': 'https://losko.ru/wp-content/uploads/2019/11/cover-1.jpg',
-    'product_category': {
-      'productCategory_id': 1,
-      'productCategory_name': 'Живопись'
+export const product: ArtworkDetails = {
+  'id': 10,
+  'name': 'Мона Лиза',
+  'image': 'https://losko.ru/wp-content/uploads/2019/11/cover-1.jpg',
+  'category': {
+    'id': 1,
+    'name': 'Живопись'
+  },
+  'style': {
+    'id': 1,
+    'name': 'Абстракция'
+  },
+  'genre': {
+    'id': 1,
+    'name': 'Анималистикаа'
+  },
+  'size_category': 1,
+  'size': '40.6 × 40.6 см',
+  'country': 'Испания',
+  'city_sale': 'Москва',
+  'year': 2001,
+  'material': 'Холст',
+  'cost_category': 1,
+  'end_cost': 79200000,
+  'fair_cost': 92300000,
+  'author': {
+    'id': 10,
+    'name': 'Леонардо да Винчи',
+    'gender': 1,
+    'age': 92,
+    'year_of_birth': 1452,
+    'show': {
+      'id': 1,
+      'name': 'Галерея Артемида, совместная выставка.',
+      'year': 2021,
+      'place': 'Париж'
     },
-    'product_style': {
-      'productStyle_id': 1,
-      'productStyle_name': 'Абстракция'
+    'awards': {
+      'id': 1,
+      'name': 'Лауреат Московской арт премии.'
     },
-    'product_genre': {
-      'productGenre_id': 1,
-      'productGenre_name': 'Анималистикаа'
-    },
-    'product_size_category': 1,
-    'product_size': '40.6 × 40.6 см',
-    'product_country': 'Испания',
-    'product_city_sale': 'Москва',
-    'product_year': '01.01.2001',
-    'product_material1': 'Акриловые краски',
-    'product_material2': 'Холст',
-    'product_info': 'На картине изображена по пояс молодая женщина по имени Лиза Герардини. Считается, что портрет заказал её муж, Франческо дель Джокондо, поэтому изображённую даму также называют Джокондой. «Мона Лиза» буквально означает «Госпожа Лиза».',
-    'product_cost_category': 1,
-    'product_cost_end': 79200000,
-    'product_cost_fair': 92300000,
-    'product_author': {
-      'productAuthor_id': 10,
-      'productAuthor_name': 'Леонардо да Винчи',
-      'productAuthor_sex': 1,
-      'productAuthor_age': '92 года.',
-      'productAuthor_year': '01.01.1452',
-      'productAuthor_show': {
-        'authorShow_id': 1,
-        'authorShow_name': 'Галерея Артемида, совместная выставка.',
-        'authorShow_year': '2021',
-        'authorShow_place': 'Париж'
-      },
-      'productAuthor_achievement': {
-        'authorAchievement_id': 1,
-        'authorAchievement_name': 'Лауреат Московской арт премии.'
-      },
-      'productAuthor_city': 'Селение Анкиано, около городка Винчи, близ Флоренции.',
-      'productAuthor_city_live': 'Кло-Люсе, Амбуаз, Турень, Королевство Франция.',
-      'productAuthor_education': 'Инженер, астроном, философ, анатом, математик, скульптор.',
-      'productAuthor_education_art': 'Художник. Учеба в мастерской Андреа Верроккьо.',
-      'productAuthor_teacher': 'Свой многолетний опыт воспитания молодых живописцев прославленный мастер обобщил в ряде практических рекомендаций в мастерской Леонардо.',
-      'productAuthor_style': 'Реализм',
-      'productAuthor_social': 'string'
-    },
-    'product_analytics': {
-      'productAnalytics_id': 1,
-      'productAnalytics_cost': '29000 - 31000',
-      'productAnalytic_collection': 'Коллекция Путина, Коллекция Пушника.',
-      'productAnalytic_cm': 'string',
-      'productAnalytic_date': '20.01.2001',
-      'analytics_diagram': {
-        'analyticsDiagram_id': 1,
-        'analyticsDiagram_cost': 29000,
-        'analyticsDiagram_date': '20.02.2001'
-      }
-    }
-  };
+    'city_of_birth': 'Селение Анкиано, около городка Винчи, близ Флоренции.',
+    'city_live': 'Кло-Люсе, Амбуаз, Турень, Королевство Франция.',
+    'education': 'Инженер, астроном, философ, анатом, математик, скульптор.',
+    'professional_education': 'Художник. Учеба в мастерской Андреа Верроккьо.',
+    'teaching_experience': 'Свой многолетний опыт воспитания молодых живописцев прославленный мастер обобщил в ряде практических рекомендаций в мастерской Леонардо.',
+    'personal_style': 'Реализм',
+    'socials': 'string'
+  },
+  'similar_works': 'string',
+  'author_works': 'string',
+  additional_image: '',
+  tablet_material: '',
+  description: ''
+};

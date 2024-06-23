@@ -21,11 +21,11 @@ const ProductCard = (): JSX.Element => {
             <section className={style.section_products}>
                 <div className={style.dropdowns__block}>
                     <ExpandableSection childComponent={<AboutWork product={product}/>} title='О работе' size='small' />
-                    <ExpandableSection childComponent={<AboutArtist author={product.product_author}/>} title='О художнике' size='small'/>
+                    <ExpandableSection childComponent={<AboutArtist author={product.author}/>} title='О художнике' size='small'/>
                 </div>
                 <div className={style.dropdowns__block}>
                     <ExpandableSection childComponent={<PriceHistory />} title='История изменения цены' size='small'/>
-                    <ExpandableSection childComponent={<Achievements author={product.product_author} collection={product.product_analytics.productAnalytic_collection} />} title='Награды и достижения' size='small'/>
+                    <ExpandableSection childComponent={<Achievements author={product.author} collection={product.author.awards.name} />} title='Награды и достижения' size='small'/>
                 </div>
                 <div>
                     <ExpandableSection childComponent={<NoSubscription />} title='Аналитика' size='big'/>
