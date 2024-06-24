@@ -4,7 +4,7 @@ import { base_url } from '../utils/constants';
 import { checkResponse } from './utils';
 
 export const getProducts = async () => {
-    const res = await fetch('https://sagaart.bounceme.net/api/product/', {
+    const res = await fetch(`${base_url}product/`, {
         method: 'GET',
         headers: {
           accept: 'application/json',

@@ -1,1 +1,1 @@
-export const base_url = 'http://158.160.155.74:8000/api/';
+export const base_url = 'https://sagaart.bounceme.net/api/';
