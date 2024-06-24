@@ -8,6 +8,7 @@ import { LineChart, Line, XAxis, Tooltip } from 'recharts';
 import heart from '../../assets/icons/heart-card.svg';
 import heartNotActive from '../../assets/icons/headrt-cart-not-active.svg';
 import CustomTooltip from '../../shared/ui/chart/custom-tooltip';
+import { NavLink } from 'react-router-dom';
 
 interface Props {
     card: Artwork;
@@ -17,7 +18,8 @@ interface Props {
 const Card: FC<Props> = ({ card }) => {
 
     const [isLiked, setIsLiked] = useState(false);
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false); 
+
     const toggleExpand = (value: boolean, setValue: (value: boolean) => void) => {
         setValue(!value);
     };
@@ -40,7 +42,9 @@ const Card: FC<Props> = ({ card }) => {
     return (
         <div className={style.main}>
             <img src={isLiked ? heart : heartNotActive} onClick={() => toggleExpand(isLiked, setIsLiked)} className={style.like} />
-            <img className={style.img} src={card.image} alt={card.name}/>
+            <NavLink to={`/products/${card.id}`}>
+                <img className={style.img} src={card.image} alt={card.name} />
+            </NavLink>
             {isExpanded && (
                 <div className={style.modal}>
                     <div className={style.modal__section}>

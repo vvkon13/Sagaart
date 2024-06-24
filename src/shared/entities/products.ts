@@ -35,3 +35,10 @@ export interface Artwork {
     end_cost: number;
     author: Author;
 }
+
+export interface ArtworksResponse {
+    count: number, 
+    next: null,
+    previous: null,
+    results: Artwork[]
+}

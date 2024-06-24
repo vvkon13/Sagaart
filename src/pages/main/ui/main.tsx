@@ -15,6 +15,7 @@ import design from '../../../assets/images/Desktop2.png';
 import art from '../../../assets/images/Desktop.png';
 import { cards } from '../../catalog/utils/cards';
 import Card from '../../../widgets/card/card';
+import { NavLink } from 'react-router-dom';
 
 const Main = (): JSX.Element => {
     return (
@@ -120,6 +121,11 @@ const Main = (): JSX.Element => {
                         <Card card={card} key={card.id}/>
                     ))}
                 </div>
+                <NavLink to='/products'>
+                    <Button size='xl' className={style.section_gallery__button}>
+                        Перейти в каталог
+                    </Button>
+                </NavLink>
             </section>
             <section className={style.section_design}>
                 <div className={style.section_design__main}>
