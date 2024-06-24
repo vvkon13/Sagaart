@@ -1,12 +1,14 @@
 @import url('./assets/fonts/fonts.css');
 :root {
 	--color-background-background-page: rgba(239,233,224,1);
+	--color-background-background-page-2: rgba(239,233,224,0.9);
 	--color-background-background-block: rgba(151,149,148,1);
 	--color-background-background-block-2: rgba(44,46,55,1);
 	--color-background-background-gradient: linear-gradient(to bottom, rgba(239,233,224,0.937) 0%,rgba(239,233,224,0.937) 70.87%,rgba(239,233,224,0.937) 100%);
 	--color-background-background-subscription-card: rgba(0,0,0,0.600);
 	--color-background-background-icons: rgba(239,233,224,0.600);
 	--color-text-color-text-primary-heading-body-dark: rgba(20,23,34,1);
+	--color-text-color-text-primary-heading-body-dark-2: rgba(20,23,34,0.9);
 	--color-text-color-text-primary-heading-body-light: rgba(239,233,224,1);
 	--color-text-color-text-button-light: rgba(239,233,224,1);
 	--color-text-color-text-button-dark: rgba(20,23,34,1);
