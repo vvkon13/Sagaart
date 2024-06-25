@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from '../widgets/header';
 import Footer from '../widgets/footer';
@@ -15,10 +15,11 @@ import ResetPasswordSubmition from '../pages/reset-password-submition/ui/reset-p
 import NewPasswordSubmition from '../pages/new-password-submition/ui/new-password-submition';
 import Feedback from '../pages/feedback/ui/feedback';
 import { useSelector, useDispatch } from 'react-redux';
-import { openModal, closeModal, RootState } from '../store/slices/modalSlice';
+import { closeModal, RootState } from '../store/slices/modalSlice';
 import { Xmark } from '@gravity-ui/icons';
 import { Icon, Button } from '@gravity-ui/uikit';
 import { clsx } from 'clsx';
+import style from './app.module.css';
 
 import {
     Dialog,
@@ -31,9 +32,6 @@ import {
 function App() {
     const isOpen = useSelector((state: RootState) => state.modal.isOpen);
     const dispatch = useDispatch();
-    const handleOpen = () => {
-        dispatch(openModal());
-    };
 
     const handleClose = () => {
         dispatch(closeModal());
@@ -42,9 +40,6 @@ function App() {
     return (
         <>
             <Header />
-            <button onClick={handleOpen}>
-                Enter
-            </button>
             <Routes>
                 <Route path='/products' element={<Catalog />} />
                 <Route path='/products/:productId' element={<ProductCard />} />
