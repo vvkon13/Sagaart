@@ -14,7 +14,7 @@ export const getProducts = async () => {
 	return checkResponse<ArtworksResponse>(res);
 };
 
-export const getProduct = async (id : number) => {
+export const getProduct = async (id : string) => {
     const res = await fetch(`${base_url}product/${id}/`, {
         method: 'GET',
         headers: {
