@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from '../widgets/header';
 import Footer from '../widgets/footer';
@@ -14,12 +14,37 @@ import ResetPassword from '../pages/reset-password/ui/reset-password';
 import ResetPasswordSubmition from '../pages/reset-password-submition/ui/reset-password-submition';
 import NewPasswordSubmition from '../pages/new-password-submition/ui/new-password-submition';
 import Feedback from '../pages/feedback/ui/feedback';
+import { useSelector, useDispatch } from 'react-redux';
+import { openModal, closeModal, RootState } from '../store/slices/modalSlice';
+import { Xmark } from '@gravity-ui/icons';
+import { Icon, Button } from '@gravity-ui/uikit';
+import { clsx } from 'clsx';
+
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeading,
+    DialogClose
+} from '../shared/ui/dialog/dialog';
 
 function App() {
+    const isOpen = useSelector((state: RootState) => state.modal.isOpen);
+    const dispatch = useDispatch();
+    const handleOpen = () => {
+        dispatch(openModal());
+    };
+
+    const handleClose = () => {
+        dispatch(closeModal());
+    };
 
     return (
         <>
             <Header />
+            <button onClick={handleOpen}>
+                Enter
+            </button>
             <Routes>
                 <Route path='/products' element={<Catalog />} />
                 <Route path='/products/:productId' element={<ProductCard />} />
@@ -35,6 +60,40 @@ function App() {
                 <Route path='/reset-password-submition' element={<ResetPasswordSubmition />} />
             </Routes>
             <Footer />
+            <Dialog open={isOpen} onOpenChange={handleClose}>
+                <DialogContent className={style.dialog}>
+                    <DialogHeading className={style.heading}>Успешно</DialogHeading>
+                    <DialogDescription className={style.description}>
+                        <div className={style.description__body}>
+                            <p className={style.description__line}>Ваш запрос отправлен на модерацию.</p>
+                            <p className={style.description__line}>Вы получите результаты в течении часа,</p>
+                            <p className={style.description__line}>они будут отражены в личном кабинете</p>
+                            <p className={style.description__line}>в разделе «результаты оценки»</p>
+                        </div>
+                        <div className={style.buttons}>
+                            <Button
+                                size='xl'
+                                view='normal'
+                                width='max'
+                                className={clsx(style.button, style.button__left)}
+                                >
+                                Оценить еще
+                            </Button>
+                            <Button
+                                size='xl'
+                                view='normal'
+                                width='max'
+                                className={clsx(style.button, style.button__right)}
+                                >
+                                В личный кабинет
+                            </Button>
+                        </div>
+                    </DialogDescription>
+                    <DialogClose className={style.close}>
+                        <Icon data={Xmark} size={16} />
+                    </DialogClose>
+                </DialogContent>
+            </Dialog>
         </>
     );
 }
