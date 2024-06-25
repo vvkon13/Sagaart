@@ -17,6 +17,9 @@ import NewPasswordSubmition from '../pages/new-password-submition/ui/new-passwor
 import Feedback from '../pages/feedback/ui/feedback';
 import { useSelector, useDispatch } from 'react-redux';
 import { openModal, closeModal, RootState } from '../store/slices/modalSlice';
+import { Xmark } from '@gravity-ui/icons';
+import { Icon, Button } from '@gravity-ui/uikit';
+import { clsx } from 'clsx';
 
 import {
     Dialog,
@@ -59,10 +62,37 @@ function App() {
             </Routes>
             <Footer />
             <Dialog open={isOpen} onOpenChange={handleClose}>
-                <DialogContent className="Dialog">
-                    <DialogHeading>I opened automatically</DialogHeading>
-                    <DialogDescription>After 2 seconds</DialogDescription>
-                    <DialogClose>Close</DialogClose>
+                <DialogContent className={style.dialog}>
+                    <DialogHeading className={style.heading}>Успешно</DialogHeading>
+                    <DialogDescription className={style.description}>
+                        <div className={style.description__body}>
+                            <p className={style.description__line}>Ваш запрос отправлен на модерацию.</p>
+                            <p className={style.description__line}>Вы получите результаты в течении часа,</p>
+                            <p className={style.description__line}>они будут отражены в личном кабинете</p>
+                            <p className={style.description__line}>в разделе «результаты оценки»</p>
+                        </div>
+                        <div className={style.buttons}>
+                            <Button
+                                size='xl'
+                                view='normal'
+                                width='max'
+                                className={clsx(style.button, style.button__left)}
+                                >
+                                Оценить еще
+                            </Button>
+                            <Button
+                                size='xl'
+                                view='normal'
+                                width='max'
+                                className={clsx(style.button, style.button__right)}
+                                >
+                                В личный кабинет
+                            </Button>
+                        </div>
+                    </DialogDescription>
+                    <DialogClose className={style.close}>
+                        <Icon data={Xmark} size={16} />
+                    </DialogClose>
                 </DialogContent>
             </Dialog>
         </>
