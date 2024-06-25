@@ -10,12 +10,12 @@ import { ThemeProvider } from '@gravity-ui/uikit';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-      <Provider store={store}>
-        <Router>
-            <ThemeProvider theme="light">
-                <App />
-            </ThemeProvider>,
-        </Router>
-      </Provider>
+        <Provider store={store}>
+            <Router>
+                <ThemeProvider theme="light">
+                    <App />
+                </ThemeProvider>,
+            </Router>
+        </Provider>
     </React.StrictMode>,
 );
