@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import style from './app.module.css';
 import Header from '../widgets/header';
@@ -15,12 +15,34 @@ import ResetPassword from '../pages/reset-password/ui/reset-password';
 import ResetPasswordSubmition from '../pages/reset-password-submition/ui/reset-password-submition';
 import NewPasswordSubmition from '../pages/new-password-submition/ui/new-password-submition';
 import Feedback from '../pages/feedback/ui/feedback';
+import { useSelector, useDispatch } from 'react-redux';
+import { openModal, closeModal, RootState } from '../store/slices/modalSlice';
+
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeading,
+    DialogClose
+} from '../shared/ui/dialog/dialog';
 
 function App() {
+    const isOpen = useSelector((state: RootState) => state.modal.isOpen);
+    const dispatch = useDispatch();
+    const handleOpen = () => {
+        dispatch(openModal());
+    };
+
+    const handleClose = () => {
+        dispatch(closeModal());
+    };
 
     return (
         <>
             <Header />
+            <button onClick={handleOpen}>
+                Enter
+            </button>
             <Routes>
                 <Route path='/' element={<Main />} />
                 <Route path='/catalog' element={<Catalog />} />
@@ -36,6 +58,13 @@ function App() {
                 <Route path='/reset-password-submition' element={<ResetPasswordSubmition />} />
             </Routes>
             <Footer />
+            <Dialog open={isOpen} onOpenChange={handleClose}>
+                <DialogContent className="Dialog">
+                    <DialogHeading>I opened automatically</DialogHeading>
+                    <DialogDescription>After 2 seconds</DialogDescription>
+                    <DialogClose>Close</DialogClose>
+                </DialogContent>
+            </Dialog>
         </>
     );
 }
