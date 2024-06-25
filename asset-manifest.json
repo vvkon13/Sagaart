@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Sagaart/static/css/main.38d5b5e7.css",
-    "main.js": "/Sagaart/static/js/main.6318a497.js",
+    "main.css": "/Sagaart/static/css/main.d681d421.css",
+    "main.js": "/Sagaart/static/js/main.ae45d761.js",
     "static/media/20.png": "/Sagaart/static/media/20.0aca442ec0472f2bff6d.png",
     "static/media/18.png": "/Sagaart/static/media/18.126ca308eb4d4f52906f.png",
     "static/media/15.png": "/Sagaart/static/media/15.a6e45b231123439ac45a.png",
@@ -20,6 +20,7 @@
     "static/media/chart-main.png": "/Sagaart/static/media/chart-main.08210f0998fae4be5f33.png",
     "static/media/registration.png": "/Sagaart/static/media/registration.eb97e136869eb854ab28.png",
     "static/media/auth.png": "/Sagaart/static/media/auth.4639bc299198037259df.png",
+    "static/media/uploading.png": "/Sagaart/static/media/uploading.d166a093d4c38ff1fbaa.png",
     "static/media/Image-4.png": "/Sagaart/static/media/Image-4.ce450bcd392c924e1e08.png",
     "static/media/TT-Commons-Bold.otf": "/Sagaart/static/media/TT-Commons-Bold.3d86f1a76afba3f39aee.otf",
     "static/media/TT-Commons-Medium.otf": "/Sagaart/static/media/TT-Commons-Medium.fec750d69d7de2bf5efa.otf",
@@ -47,11 +48,11 @@
     "index.html": "/Sagaart/index.html",
     "static/media/heart-card.svg": "/Sagaart/static/media/heart-card.deeeec6be88e9cab97ed40302eda9908.svg",
     "static/media/Loupe.svg": "/Sagaart/static/media/Loupe.b7cc4433b13eb25ed5df0b045fbf7dd3.svg",
-    "main.38d5b5e7.css.map": "/Sagaart/static/css/main.38d5b5e7.css.map",
-    "main.6318a497.js.map": "/Sagaart/static/js/main.6318a497.js.map"
+    "main.d681d421.css.map": "/Sagaart/static/css/main.d681d421.css.map",
+    "main.ae45d761.js.map": "/Sagaart/static/js/main.ae45d761.js.map"
   },
   "entrypoints": [
-    "static/css/main.38d5b5e7.css",
-    "static/js/main.6318a497.js"
+    "static/css/main.d681d421.css",
+    "static/js/main.ae45d761.js"
   ]
 }
