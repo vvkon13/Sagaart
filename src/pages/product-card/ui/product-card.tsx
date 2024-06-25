@@ -14,24 +14,23 @@ import { getProduct } from '../../../shared/api/products-api';
 import { useParams } from 'react-router-dom';
 import PurchacingActivity from './purchacing-activity';
 import PriceRatio from './price-ratio';
-import { product } from './utils/data';
 
 const ProductCard = (): JSX.Element => {
 
-    // const [product, setProduct] = useState<ArtworkDetails | null>(null);
-    // const { id } = useParams();
+    const [product, setProduct] = useState<ArtworkDetails | null>(null);
+    const { productId } = useParams();
 
     const breadItem = product?.author.name ?? '';
 
-    // useEffect(() => {
-    //     if (id == undefined) { 
-    //         return;
-    //     }
-    //     getProduct(id)
-    //     .then((res) => {
-    //         setProduct(res);
-    //     });
-    // }, []);
+    useEffect(() => {
+        if (productId == undefined) { 
+            return;
+        }
+        getProduct(productId)
+        .then((res) => {
+            setProduct(res);
+        });
+    }, []);
 
     const items: Item[] = [
         {

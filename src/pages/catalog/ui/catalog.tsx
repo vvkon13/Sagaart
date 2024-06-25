@@ -5,18 +5,17 @@ import { cards } from '../utils/cards';
 import Card from '../../../widgets/card/card';
 import funnel from '../../../assets/icons/Funnel.svg';
 import Sort from './sort';
-import Filters from './filtration';
+import Filters, { FiltersValues } from './filtration';
 import Categories from './categories';
 import BreadcrumbsComponent from './bread-crumbs';
 import { items, options } from '../constants';
 import { Artwork } from '../../../shared/entities/products';
-import { getProducts } from '../../../shared/api/products-api';
+import { getProducts, getProductsWithFilters } from '../../../shared/api/products-api';
+import NoProducts from './no-products';
 
 const Catalog = (): JSX.Element => {
 
     const [products, setProducts] = useState<Artwork[] | null>(null);
-
-    
 
     const [filters, setFilters] = useState({
         price: 'any',
@@ -34,17 +33,35 @@ const Catalog = (): JSX.Element => {
       };
 
     const [state, setState] = useState({page: 1, pageSize: cards.length});
+    const [emptyState, setEmptyState] = useState<boolean>(false);
 
     const handleUpdate: PaginationProps['onUpdate'] = (page, pageSize) =>
     setState((prevState) => ({...prevState, page, pageSize}));
 
     useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    const fetchProducts = () => {
         getProducts()
         .then((res) => {
             setProducts(res.results);
         });
-    },[]);
+    };
 
+    const updateProducts = (filters: FiltersValues) => {
+        getProductsWithFilters(filters)
+        .then((res) => {
+            setProducts(res.results);
+            console.log(res.results);
+            if (res.results.length == 0) {
+                setEmptyState(true);
+                fetchProducts();
+            } else {
+                setEmptyState(false);
+            }
+        });
+    };
 
     return (
         <section className={style.main}>
@@ -60,8 +77,9 @@ const Catalog = (): JSX.Element => {
                     </Button>
                     <Sort options={options}/>
                 </div>
+                {emptyState && <NoProducts /> }
                 <div className={style.gallery}>
-                    <Filters isVisible={isSidebarVisible} />
+                    <Filters isVisible={isSidebarVisible} updateProducts={updateProducts} />
                     {products && products.map(product => (
                         <Card card={product} key={product.id}/>
                     ))}

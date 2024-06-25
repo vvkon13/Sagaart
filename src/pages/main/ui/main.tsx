@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './style.module.css';
 import { Button, Icon } from '@gravity-ui/uikit';
 import main from '../../../assets/images/picture.png';
@@ -16,8 +16,20 @@ import art from '../../../assets/images/Desktop.png';
 import { cards } from '../../catalog/utils/cards';
 import Card from '../../../widgets/card/card';
 import { NavLink } from 'react-router-dom';
+import { Artwork } from '../../../shared/entities/products';
+import { getProducts } from '../../../shared/api/products-api';
 
 const Main = (): JSX.Element => {
+
+    const [products, setProducts] = useState<Artwork[] | null>(null);
+
+    useEffect(() => {
+        getProducts()
+        .then((res) => {
+            setProducts(res.results);
+        });
+    },[]);
+
     return (
         <div className={style.main}>
             <section className={style.section_main}>
@@ -116,11 +128,14 @@ const Main = (): JSX.Element => {
                         В нашем уникальном маркет-плейсе каждая картина рассказывает свою неповторимую историю. Здесь вы найдёте произведения талантливых художников современности, способные вдохновить, вызвать глубокие эмоции и стать украшением любого пространства. Мы следим за новинками
                     </p>
                 </div>
-                <div className={style.section_gallery__gallery}>
-                    {cards.map(card => (
-                        <Card card={card} key={card.id}/>
-                    ))}
-                </div>
+                { products ?  
+                    <div className={style.section_gallery__gallery}>
+                        {products.map(product => (
+                            <Card card={product} key={product.id}/>
+                        ))}
+                    </div>
+                    : <></>
+                }
                 <NavLink to='/products'>
                     <Button size='xl' className={style.section_gallery__button}>
                         Перейти в каталог

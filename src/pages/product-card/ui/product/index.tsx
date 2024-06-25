@@ -24,13 +24,13 @@ const  price: RadioGroupOption[] = [
                             {product.author.name}
                         </h3>
                         <p className={style.desc}>
-                            {product.name},{product.year}
+                            {product.name}, {product.year}
                         </p>
                         <p className={style.size}>
                             {product.size}
                         </p>
                         <p className={style.price}>
-                            {product.end_cost}
+                            {product.end_cost} ₽
                         </p>
                     </div>
                     <div className={style.flex}>
