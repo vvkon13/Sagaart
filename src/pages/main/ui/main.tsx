@@ -43,12 +43,14 @@ const Main = (): JSX.Element => {
                         </p>
                         <div className={style.buttons}>
                             <Button size='l' className={`${style.button} ${style.button_dark}`}>
-                                <Icon className={style.button_img} data={Database} size='16' />
+                                <Icon className={style.button_img} data={Database} size={16} />
                                 оценить объект
                             </Button>
-                            <Button size='l' className={style.button}>
-                                узнать подробнее
-                            </Button>
+                            <NavLink to='/subscription' className={style.button}>
+                                <Button size='l' >
+                                    узнать подробнее
+                                </Button>
+                            </NavLink>
                         </div>
                     </div>
                     <div className={style.section_main__charts}>

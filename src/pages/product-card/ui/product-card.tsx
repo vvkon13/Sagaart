@@ -54,7 +54,7 @@ const ProductCard = (): JSX.Element => {
                         product={product}
                     />
                 </section>
-                <section className={style.section_products}>
+                <section className={style.section_info}>
                     <div className={style.dropdowns__block}>
                         <ExpandableSection childComponent={<AboutWork product={product}/>} title='О работе' size='small' />
                         <ExpandableSection childComponent={<AboutArtist author={product.author}/>} title='О художнике' size='small'/>
@@ -68,13 +68,31 @@ const ProductCard = (): JSX.Element => {
                         <ExpandableSection childComponent={<PriceRatio />} title='Аналитика' size='small'/>
                     </div>
                 </section>
-                <section>
+                <section className={style.section_author_works}>
+                    <h3 className={style.title}>
+                        Другие работы художника
+                    </h3>
+                    <div>
+                        {product.author_works.length === 0? 
+                            <p className={style.desc}>
+                                У художника пока нет других работ. Следите за обновлениями, чтобы не пропустить новинки.
+                            </p>
+                            : <></>
+                        }
+                    </div>
                 </section>
-                <section>
-                    
-                </section>
-                <section>
-                    
+                <section className={style.section_author_works}>
+                    <h3 className={style.title}>
+                        Похожие работы
+                    </h3>
+                    <div>
+                        {product.similar_works.length === 0? 
+                            <p className={style.desc}>
+                                На данный момент похожих работ не нашлось. Следите за обновлениями, чтобы не пропустить новинки.
+                            </p>
+                            : <></>
+                        }
+                    </div>
                 </section>
             </div>
         : <></>

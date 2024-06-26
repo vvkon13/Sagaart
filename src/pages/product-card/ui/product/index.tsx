@@ -39,6 +39,15 @@ const  price: RadioGroupOption[] = [
                     </div>
                 </div>
             </div>
+            <div>
+                <p>
+                    <img />
+                    Работа в интерьере
+                </p>
+                <p>
+                    2/2
+                </p>
+            </div>
         </div>
     );
 };

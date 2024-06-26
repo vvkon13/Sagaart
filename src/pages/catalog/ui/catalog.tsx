@@ -1,9 +1,11 @@
-import { Button,  Pagination, PaginationProps } from '@gravity-ui/uikit';
+import { Button,  Icon,  Pagination, PaginationProps } from '@gravity-ui/uikit';
 import React, { useEffect, useState } from 'react';
 import style from './style.module.css';
 import { cards } from '../utils/cards';
 import Card from '../../../widgets/card/card';
-import funnel from '../../../assets/icons/Funnel.svg';
+import {Funnel} from '@gravity-ui/icons';
+import {ChevronLeft} from '@gravity-ui/icons';
+import {ChevronRight} from '@gravity-ui/icons';
 import Sort from './sort';
 import Filters, { FiltersValues } from './filtration';
 import Categories from './categories';
@@ -52,13 +54,11 @@ const Catalog = (): JSX.Element => {
     const updateProducts = (filters: FiltersValues) => {
         getProductsWithFilters(filters)
         .then((res) => {
-            setProducts(res.results);
-            console.log(res.results);
             if (res.results.length == 0) {
                 setEmptyState(true);
-                fetchProducts();
             } else {
                 setEmptyState(false);
+                setProducts(res.results);
             }
         });
     };
@@ -69,11 +69,12 @@ const Catalog = (): JSX.Element => {
             <div className={style.container}>
                 <Categories />
             </div>
-            <div>
+            <div className={style.container}>
                 <div className={style.filters}>
                     <Button size='s' className={style.button} onClick={toggleSidebar}>
-                        <img src={funnel} alt='funnel' />
+                        <Icon data={Funnel} size={18}/>
                         Показать фильтры
+                        {isSidebarVisible ? <Icon data={ChevronLeft} size={20}/> :  <Icon data={ChevronRight} size={20}/>}
                     </Button>
                     <Sort options={options}/>
                 </div>
@@ -85,7 +86,7 @@ const Catalog = (): JSX.Element => {
                     ))}
                 </div>
             </div>
-            <Pagination page={1} pageSize={5} total={cards.length} onUpdate={handleUpdate} />
+            <Pagination page={1} pageSize={5} total={cards.length/12} onUpdate={handleUpdate} />
         </section>
     );
 };

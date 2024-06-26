@@ -59,7 +59,8 @@ const Filters = ({ isVisible, updateProducts }: { isVisible : boolean, updatePro
 
     useEffect(() => {
        // console.log(filters);
-      //  debouncedApplyFilters();
+    //    debouncedApplyFilters();
+    //    applyFilters();
       setTimeout(() => {
         updateProducts(filters);
       }, 500);
@@ -101,8 +102,8 @@ const Filters = ({ isVisible, updateProducts }: { isVisible : boolean, updatePro
                             </div>
                             <div>
                                 {isOpen.size && (
-                                    <RadioGroup onChange={(e) => updateFilter('size', e.target.value)}
-                                    className={style.body} size="l" name="product_size_category" defaultValue={product_size_category[0].value} options={product_size_category} direction="vertical"/>
+                                    <RadioGroup onChange={(e) => updateFilter('size', e.target.value)} 
+                                    className={style.body} size="l" name="product_size_category" defaultValue={product_size_category[0].value} options={product_size_category} direction="vertical" />
                                 )}
                             </div>
                         </div>
