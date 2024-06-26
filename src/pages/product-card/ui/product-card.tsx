@@ -16,87 +16,69 @@ import PurchacingActivity from './purchacing-activity';
 import PriceRatio from './price-ratio';
 
 const ProductCard = (): JSX.Element => {
-
     const [product, setProduct] = useState<ArtworkDetails | null>(null);
     const { productId } = useParams();
 
-    const breadItem = product?.author.name ?? '';
-
     useEffect(() => {
-        if (productId == undefined) { 
-            return;
-        }
-        getProduct(productId)
-        .then((res) => {
-            setProduct(res);
-        });
-    }, []);
+        if (!productId) return;
+        getProduct(productId).then(setProduct);
+    }, [productId]);
 
+    if (!product) return <></>;
+
+    const breadItem = product.author.name ?? '';
     const items: Item[] = [
-        {
-            text: 'Каталог',
-            // eslint-disable-next-line @typescript-eslint/no-empty-function
-            action: () => {},
-        },
-        {
-            text: breadItem,
-            // eslint-disable-next-line @typescript-eslint/no-empty-function
-            action: () => {},
-        },
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        { text: 'Каталог', action: () => {} },
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        { text: breadItem, action: () => {} },
     ];
 
     return (
-        product ?
-            <div className={style.main}>
-                <BreadcrumbsComponent items={items}/>
-                <section className={style.section_products}>
-                    <Product 
-                        product={product}
-                    />
-                </section>
-                <section className={style.section_info}>
-                    <div className={style.dropdowns__block}>
-                        <ExpandableSection childComponent={<AboutWork product={product}/>} title='О работе' size='small' />
-                        <ExpandableSection childComponent={<AboutArtist author={product.author}/>} title='О художнике' size='small'/>
-                    </div>
-                    <div className={style.dropdowns__block}>
-                        <ExpandableSection childComponent={<PriceHistory />} title='История изменения цены' size='small'/>
-                        <ExpandableSection childComponent={<Achievements author={product.author} collection={product.author.awards.name} />} title='Награды и достижения' size='small'/>
-                    </div>
-                    <div className={style.dropdowns__block}>
-                        <ExpandableSection childComponent={<PurchacingActivity />} title='Аналитика' size='small'/>
-                        <ExpandableSection childComponent={<PriceRatio />} title='Аналитика' size='small'/>
-                    </div>
-                </section>
-                <section className={style.section_author_works}>
-                    <h3 className={style.title}>
-                        Другие работы художника
-                    </h3>
-                    <div>
-                        {product.author_works.length === 0? 
-                            <p className={style.desc}>
-                                У художника пока нет других работ. Следите за обновлениями, чтобы не пропустить новинки.
-                            </p>
-                            : <></>
-                        }
-                    </div>
-                </section>
-                <section className={style.section_author_works}>
-                    <h3 className={style.title}>
-                        Похожие работы
-                    </h3>
-                    <div>
-                        {product.similar_works.length === 0? 
-                            <p className={style.desc}>
-                                На данный момент похожих работ не нашлось. Следите за обновлениями, чтобы не пропустить новинки.
-                            </p>
-                            : <></>
-                        }
-                    </div>
-                </section>
-            </div>
-        : <></>
+        <div className={style.main}>
+            <BreadcrumbsComponent items={items} />
+            <section className={style.section_products}>
+                <Product product={product} />
+            </section>
+            <section className={style.section_info}>
+                <DropdownBlock>
+                    <ExpandableSection childComponent={<AboutWork product={product} />} title='О работе' size='small' />
+                    <ExpandableSection childComponent={<AboutArtist author={product.author} />} title='О художнике' size='small' />
+                </DropdownBlock>
+                <DropdownBlock>
+                    <ExpandableSection childComponent={<PriceHistory />} title='История изменения цены' size='small' />
+                    <ExpandableSection childComponent={<Achievements author={product.author} collection={product.author.awards.name} />} title='Награды и достижения' size='small' />
+                </DropdownBlock>
+                <DropdownBlock>
+                    <ExpandableSection childComponent={<PurchacingActivity />} title='Аналитика' size='small' />
+                    <ExpandableSection childComponent={<PriceRatio />} title='Аналитика' size='small' />
+                </DropdownBlock>
+            </section>
+            <ArtworkSection title="Другие работы художника" works={product.author_works} />
+            <ArtworkSection title="Похожие работы" works={product.similar_works} />
+        </div>
     );
 };
+
+const DropdownBlock = ({ children }: {children: JSX.Element[]}) => (
+    <div className={style.dropdowns__block}>
+        {children}
+    </div>
+);
+
+const ArtworkSection = ({ title, works }: { title: string, works: string }) => (
+    <section className={style.section_author_works}>
+        <h3 className={style.title}>{title}</h3>
+        <div>
+            {works.length === 0 ? (
+                <p className={style.desc}>
+                    {title.includes('Другие') ? 'У художника пока нет других работ. Следите за обновлениями, чтобы не пропустить новинки.' : 'На данный момент похожих работ не нашлось. Следите за обновлениями, чтобы не пропустить новинки.'}
+                </p>
+            ) : (
+                <></>
+            )}
+        </div>
+    </section>
+);
 
 export default ProductCard;
