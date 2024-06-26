@@ -1,6 +1,7 @@
 import { Button, RadioGroup, RadioGroupOption } from '@gravity-ui/uikit';
 import React from 'react';
 import style from './style.module.css';
+import eye from '../../../../assets/icons/eye-alt.svg';
 
 export const Product = ({product}: {product: any}) => {
 
@@ -39,9 +40,9 @@ const  price: RadioGroupOption[] = [
                     </div>
                 </div>
             </div>
-            <div>
-                <p>
-                    <img />
+            <div className={style.count}>
+                <p className={style.count_title}>
+                    <img src={eye} alt='eye' />
                     Работа в интерьере
                 </p>
                 <p>

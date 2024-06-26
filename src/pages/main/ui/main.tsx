@@ -1,23 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import style from './style.module.css';
 import { Button, Icon } from '@gravity-ui/uikit';
-import main from '../../../assets/images/picture.png';
-import chart from '../../../assets/images/chart-main.png';
 import {Database} from '@gravity-ui/icons';
 import Benefit from './benefit';
-import vector from '../../../assets/icons/Vector.svg';
 import New from './new';
-import image1 from '../../../assets/images/Image.png';
-import image2 from '../../../assets/images/Image-2.png';
-import image3 from '../../../assets/images/Image-3.png';
-import image4 from '../../../assets/images/Image-4.png';
-import design from '../../../assets/images/Desktop2.png';
-import art from '../../../assets/images/Desktop.png';
-import { cards } from '../../catalog/utils/cards';
-import Card from '../../../widgets/card/card';
 import { NavLink } from 'react-router-dom';
 import { Artwork } from '../../../shared/entities/products';
 import { getProducts } from '../../../shared/api/products-api';
+import Card from '../../../widgets/card/card';
+import { BENEFITS, NEWS, GALLERY_IMAGES } from '../utils/constants';
 
 const Main = (): JSX.Element => {
 
@@ -54,31 +45,19 @@ const Main = (): JSX.Element => {
                         </div>
                     </div>
                     <div className={style.section_main__charts}>
-                        <img className={style.section_main__img} src={main} alt='main' />
-                        <img className={style.section_main__chart} src={chart} alt='chart' />
+                        <img className={style.section_main__img} src={GALLERY_IMAGES.main} alt='main' />
+                        <img className={style.section_main__chart} src={GALLERY_IMAGES.chart} alt='chart' />
                     </div>
                 </div>
                 <div className={style.section_main__benefits}>
-                    <Benefit 
-                        title='Объективный анализ цены' 
-                        desc='Вы получаете справедливую цену арт-объекта, основанную на алгоритме, исключающий субъективное мнение специалистов'
-                        icon={vector}
-                    />
-                    <Benefit 
-                        title='Инновационность' 
-                        desc='Разработанный алгоритм не имеет аналогов в мире, вы можете получить доступ уже сейчас'
-                        icon={vector}
-                    />
-                    <Benefit 
-                        title='Анатилическая база' 
-                        desc='По подписке вы получаете доступ к аналитике по более чем 13000 объектов искусства на нашем маркетплейсе'
-                        icon={vector}
-                    />
-                    <Benefit    
-                        title='Достоверность' 
-                        desc='Мы провели многочисленные исследования и испытания технологии и получили высокий уровень достоверности'
-                        icon={vector}
-                    />
+                    {BENEFITS.map((benefit) => (
+                        <Benefit
+                        key={benefit.title}
+                        title={benefit.title}
+                        desc={benefit.desc}
+                        icon={benefit.icon}
+                        />
+                    ))}
                 </div>
             </section>
             <section className={style.section_news}>
@@ -96,26 +75,14 @@ const Main = (): JSX.Element => {
                     </Button>
                 </div>
                 <div className={style.section_news__news}>
-                    <New 
-                        title='Арт-рынок в 2023-2024 году'
-                        desc='Рынок современного искусства вступил в важную и долгожданную фазу адаптации'
-                        image={image1}
-                    />
-                    <New 
-                        title='Отчет о рынке искусства'
-                        desc='Замедление темпов роста на основных мировых площадках связано с меньшим количеством результатов'
-                        image={image2}
-                    />
-                    <New 
-                        title='Путеводители по выставкам'
-                        desc='Топ-3 выставки современного искусства на июнь-июль в 2024 году'
-                        image={image3}
-                    />
-                    <New 
-                        title='Обзор аукционного рынка'
-                        desc='Топ-10 аукционных домов по аукционному обороту в 2023 годуу'
-                        image={image4}
-                    />
+                    {NEWS.map((newsItem) => (
+                        <New
+                        key={newsItem.title}
+                        title={newsItem.title}
+                        desc={newsItem.desc}
+                        image={newsItem.image}
+                        />
+                    ))}
                 </div>
             </section>
             <section className={style.section_gallery}>
@@ -154,7 +121,7 @@ const Main = (): JSX.Element => {
                     </h2>
                 </div>
                 <div className={style.section_design__info}>
-                    <img src={design} alt='design' />
+                    <img src={GALLERY_IMAGES.design} alt='design' />
                     <div className={style.section__block}>
                         <h3 className={style.section__block__title}>
                             Удобный поиск арт-объектов в ваш интерьер
@@ -201,7 +168,7 @@ const Main = (): JSX.Element => {
                             </Button>
                         </div>
                     </div>
-                    <img src={art} alt='art' />
+                    <img src={GALLERY_IMAGES.art} alt='art' />
                 </div>
             </section>
         </div>
