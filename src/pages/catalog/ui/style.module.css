@@ -1,6 +1,5 @@
 .main {
     padding: 20px;
-    width: 100vw;
     display: flex;
     gap: 10px;
     background-color: var(--color-background-background-page);
@@ -9,7 +8,6 @@
 }
 
 .container {
-    width: 90vw;
     display: flex;
     padding: 0 80px 100px;
     gap: 40px;
@@ -35,6 +33,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 1200px) {
+    .gallery {
+        position: relative;
+        columns: 2;
+    }
 }
 
 @media screen and (max-width: 1200px) {

@@ -1,6 +1,5 @@
 .main {
     padding: 20px;
-    width: 100vw;
     display: flex;
     gap: 10px;
     background-color: #EFE9E0;
@@ -8,31 +7,23 @@
     align-items: center;
 }
 
-.section_products {
-    width: 90vw;
-    display: flex;
-    padding: 100px;
-    gap: 40px;
-    margin: 50px auto 0;
-}
 
 .section_products {
     width: 90vw;
     display: flex;
-    padding: 0 100px 100px;
+    padding: 0 0 100px;
     gap: 40px;
     margin: 0 auto;
     flex-direction: column;
 }
 
 .section_info {
-    width: 90vw;
     display: flex;
-    padding: 0 100px 100px;
-    gap: 40px;
+    width: 90%;
+    padding: 30px 0 100px;
+    gap: 20px;
     margin: 0 auto;
     flex-direction: column;
-    border-bottom: 1px solid black;
 }
 
 .dropdowns__block {
@@ -42,9 +33,9 @@
 }
 
 .section_author_works {
-    width: 90vw;
     display: flex;
-    padding: 30px 100px 100px;
+    width: 90%;
+    padding: 30px 0 100px;
     gap: 20px;
     margin: 0 auto;
     flex-direction: column;

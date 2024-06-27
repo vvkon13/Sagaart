@@ -1,16 +1,14 @@
 .main {
     padding: 20px;
-    width: 100%;
     display: flex;
     flex-direction: column;
     background-color: #EFE9E0;
 }
 
 .section_main {
-    width: 90vw;
     display: flex;
     flex-direction: column;
-    padding: 100px;
+    padding: 80px;
     gap: 40px;
     margin: 50px auto 0;
     border-bottom: 1px solid #141722;
@@ -95,7 +93,6 @@
 }
 
 .section_news {
-    width: 90vw;
     display: flex;
     flex-direction: column;
     padding: 100px;
@@ -145,11 +142,10 @@
 .section_news__news {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 5px;
 }
 
 .section_gallery {
-    width: 90vw;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -201,7 +197,6 @@
 }
 
 .section_design {
-    width: 90vw;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -215,7 +210,6 @@
 }
 
 .section_art {
-    width: 90vw;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -232,7 +226,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    flex-wrap: wrap;
+    gap: 50px;
 }
 
 .section__block {
@@ -261,6 +255,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 50px;
 }
 
 .section__title {
