@@ -1,7 +1,6 @@
 import { Button,  Icon,  Pagination, PaginationProps } from '@gravity-ui/uikit';
 import React, { useEffect, useState } from 'react';
 import style from './style.module.css';
-import { cards } from '../utils/cards';
 import Card from '../../../widgets/card/card';
 import {Funnel} from '@gravity-ui/icons';
 import {ChevronLeft} from '@gravity-ui/icons';
@@ -34,7 +33,7 @@ const Catalog = (): JSX.Element => {
         setIsSidebarVisible(!isSidebarVisible);
       };
 
-    const [state, setState] = useState({page: 1, pageSize: cards.length});
+    const [state, setState] = useState({page: 1, pageSize: products?.length});
     const [emptyState, setEmptyState] = useState<boolean>(false);
 
     const handleUpdate: PaginationProps['onUpdate'] = (page, pageSize) =>
@@ -86,7 +85,7 @@ const Catalog = (): JSX.Element => {
                     ))}
                 </div>
             </div>
-            <Pagination page={1} pageSize={5} total={cards.length/12} onUpdate={handleUpdate} />
+            <Pagination page={1} pageSize={5} total={20} onUpdate={handleUpdate} />
         </section>
     );
 };
