@@ -20,6 +20,8 @@ import { Xmark } from '@gravity-ui/icons';
 import { Icon, Button } from '@gravity-ui/uikit';
 import { clsx } from 'clsx';
 import style from './app.module.css';
+import { useNavigate } from 'react-router-dom';
+
 
 import {
     Dialog,
@@ -32,6 +34,8 @@ import {
 function App() {
     const isOpen = useSelector((state: RootState) => state.modal.isOpen);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
 
     const handleClose = () => {
         dispatch(closeModal());
@@ -71,7 +75,11 @@ function App() {
                                 view='normal'
                                 width='max'
                                 className={clsx(style.button, style.button__left)}
-                                >
+                                onClick={() => {
+                                    navigate('/review');
+                                    handleClose();
+                                }}
+                            >
                                 Оценить еще
                             </Button>
                             <Button
@@ -79,7 +87,11 @@ function App() {
                                 view='normal'
                                 width='max'
                                 className={clsx(style.button, style.button__right)}
-                                >
+                                onClick={() => {
+                                    navigate('/profile');
+                                    handleClose();
+                                }}
+                            >
                                 В личный кабинет
                             </Button>
                         </div>

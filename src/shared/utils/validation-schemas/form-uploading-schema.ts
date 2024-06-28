@@ -19,7 +19,7 @@ const schema = yup.object().shape({
         .trim()
         .min(2, 'Длина поля от 2 до 30 символов')
         .max(30, 'Длина поля от 2 до 30 символов'),
-    country_live: yup
+    birth_country: yup
         .string()
         .required('Поле обязательно для заполнения')
         .trim()
@@ -38,7 +38,7 @@ const schema = yup.object().shape({
             /^\d{4}$/,
             'Введите корректный год'
         ),
-    creation_year: yup
+    year: yup
         .string()
         .required('Поле обязательно для заполнения')
         .trim()

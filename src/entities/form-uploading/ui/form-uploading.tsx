@@ -9,6 +9,9 @@ import { Select } from '../../../shared/ui/';
 import { clsx } from 'clsx';
 import { JSX } from 'react/jsx-runtime';
 
+
+
+
 const Color = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>): JSX.Element => {
     return (
         <svg
@@ -41,9 +44,11 @@ const listGender = [
 
 export const FormFieldsUploading: FC<FormUploadingProps> = ({
     serverErrorText = '',
+    setServerErrorText
 }) => {
 
     const [imagePreviewUrl, setImagePreviewUrl] = useState('');
+
 
     const {
         formState: { isValid, errors },
@@ -74,6 +79,7 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                         placeholder="Введите имя художника"
                         error={errors.author_name ? `${errors.author_name?.message}` : ''}
                         style={{ backgroundColor: 'rgba(239,233,224,1)' }}
+                        onFocus={() => setServerErrorText('')}
                     />
                     <Input
                         name="product_name"
@@ -81,6 +87,7 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                         placeholder="Введите название картины"
                         error={errors.product_name ? `${errors.product_name?.message}` : ''}
                         style={{ backgroundColor: 'rgba(239,233,224,1)' }}
+                        onFocus={() => setServerErrorText('')}
                     />
 
                     <Input
@@ -89,14 +96,16 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                         placeholder="Выберите категорию"
                         error={errors.category ? `${errors.category?.message}` : ''}
                         style={{ backgroundColor: 'rgba(239,233,224,1)' }}
+                        onFocus={() => setServerErrorText('')}
                     />
 
                     <Input
-                        name="country_live"
+                        name="birth_country"
                         labelName="Страна проживания художника"
                         placeholder="Укажите страну проживания на момент создания объекта"
                         error={errors.country_live ? `${errors.country_live?.message}` : ''}
                         style={{ backgroundColor: 'rgba(239,233,224,1)' }}
+                        onFocus={() => setServerErrorText('')}
                     />
 
                     <div className={styles.input_sublist}>
@@ -119,9 +128,10 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                                 type="custom-mask"
                                 maska='9999'
                                 maskPlaceholder='****'
+                                onFocus={() => setServerErrorText('')}
                             />
                             <InputM
-                                name="creation_year"
+                                name="year"
                                 labelName="Год создания"
                                 placeholder="Укажите год создания"
                                 error={errors.creation_year ? `${errors.creation_year?.message}` : ''}
@@ -129,6 +139,7 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                                 type="custom-mask"
                                 maska='9999'
                                 maskPlaceholder='****'
+                                onFocus={() => setServerErrorText('')}
                             />
                             <InputM
                                 name="size"
@@ -139,6 +150,7 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                                 type="custom-mask"
                                 maska='99.9x99.9см'
                                 maskPlaceholder='**.*-**.*см'
+                                onFocus={() => setServerErrorText('')}
                             />
                         </div>
                         <div className={styles.input_list}>
@@ -148,6 +160,7 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                                 placeholder="Укажите персональные выставки"
                                 error={errors.solo_show ? `${errors.solo_show?.message}` : ''}
                                 style={{ backgroundColor: 'rgba(239,233,224,1)' }}
+                                onFocus={() => setServerErrorText('')}
                             />
                             <Input
                                 name="group_show"
@@ -155,6 +168,7 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                                 placeholder="Укажите групповые выставки"
                                 error={errors.group_show ? `${errors.group_show?.message}` : ''}
                                 style={{ backgroundColor: 'rgba(239,233,224,1)' }}
+                                onFocus={() => setServerErrorText('')}
                             />
                             <Input
                                 name="tablet_material"
@@ -162,6 +176,7 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                                 placeholder="Укажите материал планшета "
                                 error={errors.tablet_material ? `${errors.tablet_material?.message}` : ''}
                                 style={{ backgroundColor: 'rgba(239,233,224,1)' }}
+                                onFocus={() => setServerErrorText('')}
                             />
                             <Input
                                 name="material"
@@ -169,6 +184,7 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                                 placeholder="Укажите материал которым нарисовано"
                                 error={errors.material ? `${errors.material?.message}` : ''}
                                 style={{ backgroundColor: 'rgba(239,233,224,1)' }}
+                                onFocus={() => setServerErrorText('')}
                             />
                         </div>
                     </div>

@@ -78,6 +78,7 @@
     "@types/react-dropzone": "^5.1.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.2",
-    "globals": "^15.4.0"
+    "globals": "^15.4.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.10.5"
   }
 }
