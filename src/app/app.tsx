@@ -14,6 +14,7 @@ import ResetPassword from '../pages/reset-password/ui/reset-password';
 import ResetPasswordSubmition from '../pages/reset-password-submition/ui/reset-password-submition';
 import NewPasswordSubmition from '../pages/new-password-submition/ui/new-password-submition';
 import Feedback from '../pages/feedback/ui/feedback';
+import ScrollToTop from '../features/scroll-to-top';
 import { useSelector, useDispatch } from 'react-redux';
 import { closeModal, RootState } from '../store/slices/modalSlice';
 import { Xmark } from '@gravity-ui/icons';
@@ -44,6 +45,7 @@ function App() {
     return (
         <>
             <Header />
+            <ScrollToTop />
             <Routes>
                 <Route path='/products' element={<Catalog />} />
                 <Route path='/products/:productId' element={<ProductCard />} />

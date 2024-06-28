@@ -41,14 +41,15 @@ export interface Author {
   personal_style: string;
   socials: string;
 }
+
 export interface ArtworkDetails {
   id: number;
   name: string;
   image: string;
   additional_image: string;
-  category: Category;
-  style: Style;
-  genre: Genre;
+  category: Category[];
+  style: Style[];
+  genre: Genre[];
   size_category: number;
   size: string;
   country: string;
