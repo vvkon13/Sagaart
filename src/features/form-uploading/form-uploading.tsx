@@ -2,9 +2,8 @@ import React, { FC, useState, } from 'react';
 import { Form } from '../../shared/ui';
 import { FormFieldsUploading } from '../../entities/form-uploading';
 import FormUploadingSchema from '../../shared/utils/validation-schemas/form-uploading-schema';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../shared/utils/hooks';
 import { openModal } from '../../store/slices/modalSlice';
-import { IAnalytic } from '../../shared/entities/analytic';
 import { analytic } from '../../shared/api/analytic';
 
 type FormProp = {
@@ -16,7 +15,7 @@ type FormProp = {
 export const FormUploadingFeature: FC = () => {
 
 	const [serverErrorText, setServerErrorText] = useState('');
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 
 	const handleSubmit = (data: any) => {
@@ -32,6 +31,7 @@ export const FormUploadingFeature: FC = () => {
 			width: String(width)
 		})
 			.then(() => {
+				
 				dispatch(openModal());
 			})
 			.catch((error) => {

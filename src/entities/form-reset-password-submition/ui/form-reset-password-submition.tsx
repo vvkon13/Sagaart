@@ -3,14 +3,14 @@ import React, { FC } from 'react';
 import styles from './form-reset-password-submition.module.css';
 import { Button } from '@gravity-ui/uikit';
 import { clsx } from 'clsx';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../../../shared/utils/hooks';
 import { UserState } from '../../../store/slices/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 
 export const FormResetPasswordSubmition: FC = () => {
 
-	const email = useSelector((state: UserState) => state.user.email);
+	const email = useAppSelector((state: UserState) => state.user.passwordResetMail);
 	const navigate = useNavigate();
 
 	return (
