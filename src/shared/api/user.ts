@@ -56,6 +56,19 @@ export const resetPassword = async (email: string) => {
   return checkResp(res);
 };
 
+export const updateUser = async (data: any) => {
+  const res = await fetch(`${base_url}user/me/`, {
+    method: 'PATCH',
+    headers: {
+      accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify( data )
+  }
+  );
+  return checkResp(res);
+};
+
 
 
 

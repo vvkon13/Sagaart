@@ -8,7 +8,7 @@ import Subscription from '../pages/subscription/ui/subscription';
 import ProductCard from '../pages/product-card/ui/product-card';
 import SignUp from '../pages/sign-up/ui/sign-up';
 import SignIn from '../pages/sign-in/ui/sign-in';
-import Personal from '../pages/personal/ui/personal';
+import Profile from '../pages/profile/ui/personal';
 import UploadingAnObject from '../pages/uploading-an-object/ui/uploading-an-object';
 import ResetPassword from '../pages/reset-password/ui/reset-password';
 import ResetPasswordSubmition from '../pages/reset-password-submition/ui/reset-password-submition';
@@ -53,7 +53,7 @@ function App() {
                 <Route path='/subscription' element={<Subscription />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/signin' element={<SignIn />} />
-                <Route path='/profile' element={<Personal />} />
+                <Route path='/profile' element={<Profile />} />
                 <Route path='/review' element={<UploadingAnObject />} />
                 <Route path='/reset-password' element={<ResetPassword />} />
                 <Route path='/new-password-submition' element={<NewPasswordSubmition />} />
