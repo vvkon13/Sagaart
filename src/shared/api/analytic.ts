@@ -17,7 +17,7 @@ export const analytic = async (obj:IAnalytic ) => {
 };
 
 export const getAnalytics = async () => {
-    const res = await fetch(`${base_url}/analytics/`, {
+    const res = await fetch(`${base_url}analytics/`, {
         method: 'GET',
         headers: {
             accept: 'application/json',
@@ -25,6 +25,7 @@ export const getAnalytics = async () => {
             Authorization: `Token ${localStorage.getItem('token')}`
         },
     });
+
     return checkResponse<IAnalyticItem[]>(res);
 };
   

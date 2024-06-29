@@ -14,8 +14,12 @@ import { useAppDispatch } from '../../../../shared/utils/hooks';
 import { resetUser } from '../../../../store/slices/userSlice';
 import { useNavigate } from 'react-router-dom';
 
+interface MenuProps {
+    onSelectTab: (tab: string) => void;
+}
 
-const Menu = () => {
+const Menu: React.FC<MenuProps> = ({ onSelectTab }) => {
+
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const handleExit = () => {
@@ -30,37 +34,30 @@ const Menu = () => {
             });
     };
 
+    const tabs = [
+        { name: 'Личные данные', icon: Person },
+        { name: 'Избранное', icon: Heart },
+        { name: 'Оценить объект', icon: Database },
+        { name: 'Результаты оценки', icon: SquareChartBar },
+        { name: 'Добавить работу', icon: CopyPlus },
+        { name: 'Рекомендации', icon: LayoutHeaderCellsLargeThunderbolt },
+        { name: 'Моя статистика', icon: ChartMixed },
+    ];
+
     return (
         <div className={style.menu}>
             <nav className={style.nav}>
-                <Button className={style.button} size='xl'>
-                    <Icon data={Person} size={20} />
-                    Личные данные
-                </Button>
-                <Button className={style.button} size='xl'>
-                    <Icon data={Heart} size={20} />
-                    Избранное
-                </Button>
-                <Button className={style.button} size='xl'>
-                    <Icon data={Database} size={20} />
-                    Оценить объект
-                </Button>
-                <Button className={style.button} size='xl'>
-                    <Icon data={SquareChartBar} size={20} />
-                    Результаты оценки
-                </Button>
-                <Button className={style.button} size='xl'>
-                    <Icon data={CopyPlus} size={20} />
-                    Добавить работу
-                </Button>
-                <Button className={style.button} size='xl'>
-                    <Icon data={LayoutHeaderCellsLargeThunderbolt} size={20} />
-                    Рекомендации
-                </Button>
-                <Button className={style.button} size='xl'>
-                    <Icon data={ChartMixed} size={20} />
-                    Моя статистика
-                </Button>
+                {tabs.map(tab => (
+                    <Button
+                        key={tab.name}
+                        className={style.button}
+                        size='xl'
+                        onClick={() => onSelectTab(tab.name)}
+                    >
+                        <Icon data={tab.icon} size={20} />
+                        {tab.name}
+                    </Button>
+                ))}
             </nav>
             <Button className={style.button} size='xl' onClick={handleExit}>
                 <Icon data={ArrowRightToSquare} size={20} />

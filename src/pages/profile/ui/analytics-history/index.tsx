@@ -2,28 +2,25 @@ import React, { useEffect, useState } from 'react';
 import AnalyticsItem from '../analytics-item';
 import { IAnalyticItem } from '../../../../shared/entities/analytic';
 import { getAnalytics } from '../../../../shared/api/analytic';
-
-interface Work {
-    id: number;
-    analytics_owner: number;
-    product_name: string;
-    author_name: string;
-}
+import NoAnalytics from '../no-analytics';
 
 const AnalyticsHistory = () => {
 
-    const [analytics, setAnalytics] = useState<IAnalyticItem[] | null>(null);
+    const [analytics, setAnalytics] = useState<IAnalyticItem[]>([]);
 
     useEffect(() => {
         getAnalytics()
         .then((res) => {
+            console.log(res);
             setAnalytics(res);
         });
-    });
+    }, []);
 
     return (
         <section>
-            { analytics && 
+            { analytics.length === 0 ?
+                <NoAnalytics /> 
+                : 
                 <>
                     <div>
                         <h3>
