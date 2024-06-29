@@ -9,11 +9,11 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/lodash": "^4.17.5",
-    "lodash": "^4.17.21",
     "@types/inputmask": "^5.0.7",
+    "@types/lodash": "^4.17.5",
     "clsx": "^2.1.1",
     "inputmask": "^5.0.9",
+    "lodash": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-dropzone": "^14.2.3",
@@ -68,6 +68,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.10.5",
     "@eslint/js": "^9.5.0",
     "@gravity-ui/chartkit": "^5.8.0",
     "@gravity-ui/components": "^3.6.2",
@@ -79,7 +80,6 @@
     "@types/react-dropzone": "^5.1.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.2",
-    "globals": "^15.4.0",
-    "@babel/plugin-proposal-private-property-in-object": "^7.10.5"
+    "globals": "^15.4.0"
   }
 }

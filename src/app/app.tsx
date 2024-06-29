@@ -54,6 +54,7 @@ function App() {
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/signin' element={<SignIn />} />
                 <Route path='/profile' element={<Personal />} />
+                <Route path='/profile/:productId' element={<ProductCard />} />
                 <Route path='/review' element={<UploadingAnObject />} />
                 <Route path='/reset-password' element={<ResetPassword />} />
                 <Route path='/new-password-submition' element={<NewPasswordSubmition />} />

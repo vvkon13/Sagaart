@@ -14,3 +14,11 @@ export interface IAnalytic {
     group_show:string;
 }
 
+export interface IAnalyticItem {
+    id: number,
+    analytics_owner: number,
+    product_name: string;
+    author_name: string;
+}
+
+
