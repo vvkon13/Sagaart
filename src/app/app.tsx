@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from '../widgets/header';
 import Footer from '../widgets/footer';
@@ -15,13 +15,16 @@ import ResetPasswordSubmition from '../pages/reset-password-submition/ui/reset-p
 import NewPasswordSubmition from '../pages/new-password-submition/ui/new-password-submition';
 import Feedback from '../pages/feedback/ui/feedback';
 import ScrollToTop from '../features/scroll-to-top';
-import { useSelector, useDispatch } from 'react-redux';
-import { closeModal, RootState } from '../store/slices/modalSlice';
+import { useAppSelector, useAppDispatch } from '../shared/utils/hooks';
+import { closeModal } from '../store/slices/modalSlice';
+import { loggedIn, loggedOut, setName, setEmail, setTelephone } from '../store/slices/userSlice';
 import { Xmark } from '@gravity-ui/icons';
 import { Icon, Button } from '@gravity-ui/uikit';
 import { clsx } from 'clsx';
 import style from './app.module.css';
 import { useNavigate } from 'react-router-dom';
+import { getUserInformation } from '../shared/api/user';
+import { IUser } from '../shared/entities/user';
 
 
 import {
@@ -33,14 +36,29 @@ import {
 } from '../shared/ui/dialog/dialog';
 
 function App() {
-    const isOpen = useSelector((state: RootState) => state.modal.isOpen);
-    const dispatch = useDispatch();
+    const isOpen = useAppSelector(state => state.modal.isOpen);
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
-
-
     const handleClose = () => {
         dispatch(closeModal());
     };
+
+    useEffect(()=> {
+		if (localStorage.getItem('token')) {
+			getUserInformation()
+            .then(({email, user_name, telephone}:IUser)=>{
+                dispatch(loggedIn());
+                dispatch(setEmail(email));
+                dispatch(setName(user_name??''));
+                dispatch(setTelephone(telephone??''));
+            })
+            .catch((err) => {
+                dispatch(loggedOut());
+                localStorage.removeItem('token');
+                console.error(err);
+            });
+        }
+    },[]);
 
     return (
         <>
@@ -56,7 +74,7 @@ function App() {
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/review' element={<UploadingAnObject />} />
                 <Route path='/reset-password' element={<ResetPassword />} />
-                <Route path='/new-password-submition' element={<NewPasswordSubmition />} />
+                <Route path='/new-password-submition/:uid/:token' element={<NewPasswordSubmition />} />
                 <Route path='/feedback' element={<Feedback />} />
                 <Route path='/reset-password-submition' element={<ResetPasswordSubmition />} />
             </Routes>

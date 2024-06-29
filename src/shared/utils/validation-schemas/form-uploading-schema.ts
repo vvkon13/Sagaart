@@ -54,7 +54,7 @@ const schema = yup.object().shape({
         .required('Поле обязательно для заполнения')
         .trim()
         .matches(
-            /^\d\d\.\d\x\d\d\.\dсм$/,
+            /^\d\d\d\.\d\x\d\d\d\.\dсм$/,
             'Введите корректный рахмер'
         ),
     solo_show: yup

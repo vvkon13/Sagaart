@@ -148,8 +148,8 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                                 error={errors.size ? `${errors.size?.message}` : ''}
                                 style={{ backgroundColor: 'rgba(239,233,224,1)' }}
                                 type="custom-mask"
-                                maska='99.9x99.9см'
-                                maskPlaceholder='**.*-**.*см'
+                                maska='999.9x999.9см'
+                                maskPlaceholder='***.*-***.*см'
                                 onFocus={() => setServerErrorText('')}
                             />
                         </div>

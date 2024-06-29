@@ -1,9 +1,7 @@
 export interface IUser {
     id?: number;
     email: string;
-    first_name?: string;
-    sur_name?: string;
-    middle_name?: string;
+    user_name?: string;
     telephone?: string;
     password: string;
   }
@@ -11,4 +9,10 @@ export interface IUser {
   export interface IToken {
     auth_token: string;
   }
-  
+
+  export interface IChangePassword {
+    new_password: string;
+    re_new_password: string;
+    uid: string;
+    token: string; 
+  }
