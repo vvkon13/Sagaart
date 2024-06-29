@@ -6,22 +6,22 @@ import { FormFieldsResetPassword } from '../../entities/form-reset-password/inde
 import FormResetPasswordSchema from '../../shared/utils/validation-schemas/form-reset-password-schema';
 import { resetPassword } from '../../shared/api/user';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { setEmail } from '../../store/slices/userSlice';
+import { useAppDispatch } from '../../shared/utils/hooks';
+import { setPasswordResetMail } from '../../store/slices/userSlice';
 
 
 export const FormResetPasswordFeature: FC = () => {
 
 	const [serverErrorText, setServerErrorText] = useState('');
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 
 	const handleSubmit = (data: any) => {
 		setServerErrorText('');
 		resetPassword({ ...data })
 			.then(() => {
-				dispatch(setEmail(data.email));
+				dispatch(setPasswordResetMail(data.email));
 				navigate('/reset-password-submition');
 			})
 			.catch((error) => {
