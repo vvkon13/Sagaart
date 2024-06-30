@@ -11,7 +11,7 @@ import Categories from './categories';
 import BreadcrumbsComponent from './bread-crumbs';
 import { items, options } from '../constants';
 import { Artwork } from '../../../shared/entities/products';
-import { getProducts, getProductsWithFilters } from '../../../shared/api/products-api';
+import { getProductsWithFilters } from '../../../shared/api/products-api';
 import NoProducts from './no-products';
 
 const Catalog = (): JSX.Element => {
@@ -36,6 +36,7 @@ const Catalog = (): JSX.Element => {
     };
 
     const [state, setState] = useState({page: 1, pageSize: products?.length});
+    const [total, setTotal] = useState<number>(0);
     const [emptyState, setEmptyState] = useState<boolean>(false);
 
     const handleUpdate: PaginationProps['onUpdate'] = (page, pageSize) =>
@@ -52,6 +53,7 @@ const Catalog = (): JSX.Element => {
                 setEmptyState(true);
             } else {
                 setEmptyState(false);
+                setTotal(res.count);
                 setProducts(res.results);
             }
         });
@@ -85,7 +87,7 @@ const Catalog = (): JSX.Element => {
                     ))}
                 </div>
             </div>
-            <Pagination page={state.page} pageSize={12} total={products?.length / 12} onUpdate={handleUpdate} />
+            <Pagination page={state.page} pageSize={12} total={total} onUpdate={handleUpdate} />
         </section>
     );
 };

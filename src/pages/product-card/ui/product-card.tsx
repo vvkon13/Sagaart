@@ -27,7 +27,11 @@ const ProductCard = (): JSX.Element => {
 
     useEffect(() => {
         if (!productId) return;
-        getProduct(productId).then(setProduct);
+        getProduct(productId).then((res) =>  {
+            console.log(res);
+            setProduct(res);
+        }
+        );
     }, [productId]);
 
     if (!product) return <></>;
@@ -54,7 +58,7 @@ const ProductCard = (): JSX.Element => {
                 </DropdownBlock>
                 <DropdownBlock>
                     <ExpandableSection childComponent={<PriceHistory />} title='История изменения цены' size='small' />
-                    <ExpandableSection childComponent={<Achievements author={product.author} collection={product.author.awards.name} />} title='Награды и достижения' size='small' />
+                    <ExpandableSection childComponent={<Achievements shows={product.author.show} collection={product.author.awards.length != 0 ? product.author.awards[0].name : ''} />} title='Награды и достижения' size='small' />
                 </DropdownBlock>
                 <DropdownBlock>
                     <ExpandableSection childComponent={<PurchacingActivity />} title='Аналитика' size='small' />
