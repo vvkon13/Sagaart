@@ -34,11 +34,11 @@ const Main = (): JSX.Element => {
                             Наш алгоритм на основе огромной базы данных поможет определить справедливую цену  арт-объекта и оценит его инвестиционную привлекательность для вас
                         </p>
                         <div className={style.buttons}>
-                            <Button size='l' className={`${style.button} ${style.button_dark}`} onClick={() => navigate('/review')}>
+                            <Button size='xl' className={`${style.button} ${style.button_dark}`} onClick={() => navigate('/review')}>
                                 <Icon className={style.button_img} data={Database} size={16} />
                                 оценить объект
                             </Button>
-                            <Button size='l' onClick={() => navigate('/subscription')}>
+                            <Button size='xl' onClick={() => navigate('/subscription')} className={style.button} >
                                 узнать подробнее
                             </Button>
                         </div>
@@ -156,11 +156,11 @@ const Main = (): JSX.Element => {
                             Мы ценим каждого художника и его вклад в мир искусства. Позвольте нашей платформе стать вашим надежным партнером в путешествии от оценки до успешной продажи вашего искусства. Присоединяйтесь к нам, и вместе мы откроем новые горизонты для вашего творчества.
                         </p>
                         <div className={style.buttons}>
-                            <Button size='l' className={`${style.button} ${style.button_dark}`} onClick={() => navigate('/review')}>
+                            <Button size='xl' className={`${style.button} ${style.button_dark}`} onClick={() => navigate('/review')}>
                                 <Icon className={style.button_img} data={Database} size='16' />
                                 оценить объект
                             </Button>
-                            <Button size='l' className={style.button}  onClick={() => navigate('/products')}>
+                            <Button size='xl' className={style.button} onClick={() => navigate('/products')}>
                                 перейти в каталог
                             </Button>
                         </div>

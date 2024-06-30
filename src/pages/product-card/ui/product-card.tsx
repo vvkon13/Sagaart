@@ -14,6 +14,7 @@ import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import PurchacingActivity from './purchacing-activity';
 import PriceRatio from './price-ratio';
 import OtherArtwork from './other-work';
+import Charts from './charts';
 
 export interface Work {
     id: number, 
@@ -61,8 +62,7 @@ const ProductCard = (): JSX.Element => {
                     <ExpandableSection childComponent={<Achievements shows={product.author.show} collection={product.author.awards.length != 0 ? product.author.awards[0].name : ''} />} title='Награды и достижения' size='small' />
                 </DropdownBlock>
                 <DropdownBlock>
-                    <ExpandableSection childComponent={<PurchacingActivity />} title='Аналитика' size='small' />
-                    <ExpandableSection childComponent={<PriceRatio />} title='Аналитика' size='small' />
+                    <ExpandableSection childComponent={<Charts />} title='Аналитика' size='big' />
                 </DropdownBlock>
             </section>
             <ArtworkSection title="Другие работы художника" works={product.author_works} />
@@ -72,15 +72,13 @@ const ProductCard = (): JSX.Element => {
 };
 
 
-const DropdownBlock = ({ children }: {children: JSX.Element[]}) => (
+const DropdownBlock = ({ children }: {children: JSX.Element[] | JSX.Element }) => (
     <div className={style.dropdowns__block}>
         {children}
     </div>
 );
 
 const ArtworkSection = ({ title, works }: { title: string, works: Work[] }) => {
-
-    const navigate = useNavigate();
 
     return (
         <section className={style.section_author_works}>
