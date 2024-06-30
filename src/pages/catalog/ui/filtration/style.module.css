@@ -16,8 +16,11 @@
   }
 
   .title {
-    composes: text-style-menu-tabs from '../../../../index.css';
+    composes: text-style-body-l from '../../../../index.css';
+    width: 90%;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
   }
 
   .body {
