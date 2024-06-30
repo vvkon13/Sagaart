@@ -8,7 +8,7 @@ import heart from '../../assets/icons/Heart.svg';
 import Logo from '../logo';
 import SerachInput from '../search-input';
 import { SearchInputType } from '../search-input/types';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../shared/utils/hooks';
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <div className={style.main}>
             <div className={style.navigation}>
-                <Logo place='header' />
+                <Logo place='header'/>
                 <div className={style.main__buttons}>
                     <NavLink to='/feedback'>
                         <button className={style.button}>
