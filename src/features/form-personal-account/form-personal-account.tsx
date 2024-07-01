@@ -48,11 +48,11 @@ export const FormPersonalAccountFeature: FC = () => {
 	};
 
 	return (
-		<Form onSubmit={handleSubmit} schema={FormProfileSchema}>
-			<FormFieldsPA
+    <Form onSubmit={handleSubmit} schema={FormProfileSchema}>
+        <FormFieldsPA
 				serverErrorText={serverErrorText}
 				setServerErrorText={setServerErrorText as () => string}
 			/>
-		</Form>
+    </Form>
 	);
 };
