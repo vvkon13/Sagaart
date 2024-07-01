@@ -18,9 +18,7 @@ const AnalyticsHistory = () => {
 
     return (
         <section className={style.main}>
-            { analytics.length === 0 ?
-                <NoAnalytics /> 
-                : 
+            { analytics.length !== 0 ?
                 <>
                     <div className={style.ul}>
                         <h3 className={style.title}>
@@ -43,6 +41,8 @@ const AnalyticsHistory = () => {
                         </div>
                     </div>
                 </>
+                : 
+                <NoAnalytics /> 
             }
         </section>
     );

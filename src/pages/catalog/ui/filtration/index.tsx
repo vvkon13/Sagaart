@@ -5,6 +5,7 @@ import { product_category, product_cost_category, product_genre, product_size_ca
 import search from '../../../../assets/icons/Loupe.svg';
 import debounce from 'lodash/debounce';
 import {ChevronDown, ChevronUp} from '@gravity-ui/icons';
+import { useLocation } from 'react-router-dom';
 
 interface FiltersState {
     price: boolean;
@@ -25,10 +26,14 @@ export interface FiltersValues {
     minYear: string;
     maxYear: string;
     country: string;
+    searchText?: string;
 }
   
 
 const Filters = ({ isVisible, updateProducts }: { isVisible : boolean, updateProducts: (newFilters: FiltersValues) => void }) => {
+
+    const location = useLocation();
+    const navigationState = location.state as { filters: FiltersValues } | undefined;
     
     const [isOpen, setIsOpen] = useState<FiltersState>({
         price: false,
@@ -64,7 +69,17 @@ const Filters = ({ isVisible, updateProducts }: { isVisible : boolean, updatePro
       setTimeout(() => {
         updateProducts(filters);
       }, 500);
-      }, [filters]);
+    }, [filters]);
+
+    useEffect(() => {
+        if (navigationState?.filters) {
+            setFilters(prevFilters => ({
+                ...prevFilters,
+                ...navigationState.filters
+            }));
+        }
+    }, [navigationState]);
+
  
     const updateFilter = (key: string, value: string) => {
         setFilters((prevFilters) => ({

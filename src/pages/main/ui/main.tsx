@@ -4,7 +4,7 @@ import { Button, Icon } from '@gravity-ui/uikit';
 import {Database} from '@gravity-ui/icons';
 import Benefit from './benefit';
 import New from './new';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Artwork } from '../../../shared/entities/products';
 import { getProducts } from '../../../shared/api/products-api';
 import Card from '../../../widgets/card/card';
