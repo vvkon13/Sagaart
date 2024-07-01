@@ -17,7 +17,6 @@ export const getProducts = async () => {
 
 export const getProductsWithFilters = async (filters: FiltersValues, page: number) => {
   const url = generateUrlWithQueryParams(`${base_url}product`, filters, page);
-  console.log(url);
   const res = await fetch(url, {
     method: 'GET',
     headers: {

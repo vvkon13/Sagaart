@@ -87,7 +87,7 @@ const Main = (): JSX.Element => {
             <section className={style.section_gallery}>
                 <div className={style.section_gallery__main}>
                     <p className={style.section__desc}>
-                        галлерея
+                        галерея
                     </p>
                     <h2 className={style.section__title}>
                         вдохновитесь новинками нашей арт-галлереи                     

@@ -12,7 +12,15 @@
 
   .delete {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+  }
+
+  .trash {
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    color: var(--color-system-color-ghost);
   }
 
   .title {

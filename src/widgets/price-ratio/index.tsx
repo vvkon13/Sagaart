@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bar, BarChart, CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
-import CustomTooltip from '../../../../shared/ui/chart/custom-tooltip';
+import CustomTooltip from '../../shared/ui/chart/custom-tooltip';
 
 const data = [
     {

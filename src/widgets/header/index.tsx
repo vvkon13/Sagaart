@@ -8,7 +8,7 @@ import heart from '../../assets/icons/Heart.svg';
 import Logo from '../logo';
 import SerachInput from '../search-input';
 import { SearchInputType } from '../search-input/types';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../shared/utils/hooks';
 
 const Header = () => {

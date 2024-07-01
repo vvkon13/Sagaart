@@ -11,10 +11,8 @@ import { Item } from '../../../shared/entities/breadcrumbs';
 import { ArtworkDetails } from '../../../shared/entities/product-details';
 import { getProduct } from '../../../shared/api/products-api';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
-import PurchacingActivity from './purchacing-activity';
-import PriceRatio from './price-ratio';
 import OtherArtwork from './other-work';
-import Charts from './charts';
+import Charts from '../../../widgets/charts';
 
 export interface Work {
     id: number, 
@@ -29,7 +27,6 @@ const ProductCard = (): JSX.Element => {
     useEffect(() => {
         if (!productId) return;
         getProduct(productId).then((res) =>  {
-            console.log(res);
             setProduct(res);
         }
         );

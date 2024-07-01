@@ -27,12 +27,12 @@ const Catalog = (): JSX.Element => {
         minYear: '',
         maxYear: '',
         country: ''
-      });
+    });
     
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
     const toggleSidebar = () => {
-    setIsSidebarVisible(!isSidebarVisible);
+        setIsSidebarVisible(!isSidebarVisible);
     };
 
     const [state, setState] = useState({page: 1, pageSize: products?.length});
@@ -40,7 +40,7 @@ const Catalog = (): JSX.Element => {
     const [emptyState, setEmptyState] = useState<boolean>(false);
 
     const handleUpdate: PaginationProps['onUpdate'] = (page, pageSize) =>
-    setState((prevState) => ({...prevState, page, pageSize}));
+        setState((prevState) => ({...prevState, page, pageSize}));
 
     useEffect(() => {
         fetchProducts();

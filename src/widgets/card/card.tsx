@@ -30,8 +30,8 @@ const Card: FC<Props> = ({ card }) => {
           price: 3000,
         },
         {
-            year: '2023',
-            price: 4000,
+          year: '2023',
+          price: 4000,
           },
         {
           year: '2024',

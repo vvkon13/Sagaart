@@ -52,7 +52,6 @@ const Filters = ({ isVisible, updateProducts }: { isVisible : boolean, updatePro
     });
 
     const applyFilters = () => {
-       console.log(filters); 
         updateProducts(filters);
     };
 
@@ -98,9 +97,7 @@ const Filters = ({ isVisible, updateProducts }: { isVisible : boolean, updatePro
                     <div className={style.filters__section}>
                         <div className={style.delete}>
                             <h3 className={style.title}>ФИЛЬТРОВАТЬ ПО:</h3>
-                            <Button onClick={resetFilters}>
-                                <p>отчистить</p>
-                            </Button>
+                            <p className={style.trash} onClick={resetFilters}>сбросить фильтры</p>
                         </div>
                         <div className={style.filters__category}>
                             <div className={style.title} onClick={() => toggleDropdown('price')}>

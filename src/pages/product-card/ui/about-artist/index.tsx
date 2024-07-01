@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoPoint from '../info-point';
+import InfoPoint from '../../../../widgets/info-point';
 import { Author } from '../../../../shared/entities/product-details';
 import style from './style.module.css';
 

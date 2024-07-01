@@ -1,10 +1,8 @@
 export const checkResponse = <T>(res: Response): Promise<T> => {
-    console.log(res);
     return res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
 };
 
 export const checkResp = <T>(res: Response): Promise<T | void> => {
-    console.log(res);
     if (res.ok) {
         if ((res.status === 204) || (res.status === 201)) {
             return Promise.resolve(void 0);
