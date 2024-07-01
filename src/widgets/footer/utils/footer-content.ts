@@ -6,8 +6,8 @@ export const footerContent = [
 		column: [
 			{ linkTitle: 'О проекте', url: '/' },
 			{ linkTitle: 'Подключиться', url: '#' },
-			{ linkTitle: 'Каталог', url: '/products' },
-			{ linkTitle: 'Оценка стоимости', url: '/review' },
+			{ linkTitle: 'Каталог', url: 'https://sagaart.bounceme.net/#/products' },
+			{ linkTitle: 'Оценка стоимости', url: 'https://sagaart.bounceme.net/#/review' },
 		],
 	},
 	{
