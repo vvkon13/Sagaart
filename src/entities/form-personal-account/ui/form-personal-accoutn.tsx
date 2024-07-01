@@ -1,5 +1,5 @@
 
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import type { FormPersonalAccountProps } from './types';
 import { Input } from '../../../shared/ui';
 import styles from './form-personal-accoutn.module.css';
@@ -37,13 +37,26 @@ export const FormFieldsPA: FC<FormPersonalAccountProps> = ({
 }) => {
 
 	const {
+		watch,
 		formState: { isValid, errors },
 	} = useFormContext();
 
+	const [formChanged, setFormChanged] = useState(false);
+
+	const [userName, telephone] = watch(['user_name', 'telephone']);
+
 	const user_name = useAppSelector(state => state.user.name);
-	const telephone = useAppSelector(state => state.user.telephone);
-	const email = useAppSelector(state => state.user.email);
+	const user_telephone = useAppSelector(state => state.user.telephone);
+	const user_email = useAppSelector(state => state.user.email);
+
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		if ((user_name !== userName) || (user_telephone !== telephone)) {
+			setFormChanged(true);
+		}
+		else setFormChanged(false);
+	}, [userName, telephone, user_name, user_telephone]);
 
 
 	return (
@@ -53,21 +66,21 @@ export const FormFieldsPA: FC<FormPersonalAccountProps> = ({
             <div >
                 <label className={styles.gropup}>
                     <Input
-						name="user_name"
-						error={errors.user_name ? `${errors.user_name?.message}` : ''}
-						style={{
-							backgroundColor: 'rgba(239,233,224,1)',
-							fontWeight: '700',
-							fontSize: '32px',
-							lineHeight: '110%',
-							color: '#09090b',
-							border: 'none',
-						}}
-						onFocus={() => setServerErrorText('')}
-						defaultValue={user_name}
-						placeholder='Имя Фамилия'
-						className={styles.name}
-					/>
+							name="user_name"
+							error={errors.user_name ? `${errors.user_name?.message}` : ''}
+							style={{
+								backgroundColor: 'rgba(239,233,224,1)',
+								fontWeight: '700',
+								fontSize: '32px',
+								lineHeight: '110%',
+								color: '#09090b',
+								border: 'none',
+							}}
+							onFocus={() => setServerErrorText('')}
+							defaultValue={user_name}
+							placeholder='Имя Фамилия'
+							className={styles.name}
+						/>
                     <Icon data={Pencil} size={24} />
                 </label>
             </div>
@@ -84,7 +97,7 @@ export const FormFieldsPA: FC<FormPersonalAccountProps> = ({
 							error={errors.email ? `${errors.email?.message}` : ''}
 							style={{ textAlign: 'right', paddingLeft: '100px' }}
 							onFocus={() => setServerErrorText('')}
-							defaultValue={email}
+							defaultValue={user_email}
 							disabled={true}
 						/>
                 </div>
@@ -97,13 +110,13 @@ export const FormFieldsPA: FC<FormPersonalAccountProps> = ({
 							error={errors.telephone ? `${errors.telephone?.message}` : ''}
 							style={{ backgroundColor: 'rgba(239,233,224,1)', textAlign: 'right', paddingLeft: '100px' }}
 							onFocus={() => setServerErrorText('')}
-							defaultValue={telephone}
+							defaultValue={user_telephone}
 						/>
                 </div>
             </div>
             <div className={styles.action_list}>
                 <button className={styles.action} onClick={() => {
-						navigate(`/reset-password/${email}`);
+						navigate(`/reset-password/${user_email}`);
 					}}>Изменить&nbsp;пароль
                 </button>
 
@@ -115,7 +128,7 @@ export const FormFieldsPA: FC<FormPersonalAccountProps> = ({
 				className={styles.button}
 				type='submit'
 				size='xl'
-				disabled={!isValid}
+				disabled={Boolean(errors.telephone) || Boolean(errors.user_name) || !formChanged}
 			> Сохранить </Button>
         <span className={styles.server_error}>{serverErrorText}</span>
 
