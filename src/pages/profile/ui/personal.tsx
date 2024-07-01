@@ -3,6 +3,7 @@ import background from '../../../assets/images/Imadge.png';
 import styles from './style.module.css';
 import Menu from './menu/index';
 import AnalyticsHistory from './analytics-history';
+import { FormPersonalAccountFeature } from '../../../features/form-personal-account/form-personal-account';
 
 
 const Profile = (): JSX.Element => {
@@ -20,6 +21,7 @@ const Profile = (): JSX.Element => {
                 <div className={styles.main}>
                     <Menu onSelectTab={setSelectedTab} />
                     {selectedTab === 'Результаты оценки' && <AnalyticsHistory />}
+                    <FormPersonalAccountFeature/>
                 </div>
             </div>
         </section>);
