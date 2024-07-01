@@ -31,9 +31,6 @@ export interface FiltersValues {
   
 
 const Filters = ({ isVisible, updateProducts }: { isVisible : boolean, updateProducts: (newFilters: FiltersValues) => void }) => {
-
-    const location = useLocation();
-    const navigationState = location.state as { filters: FiltersValues } | undefined;
     
     const [isOpen, setIsOpen] = useState<FiltersState>({
         price: false,
@@ -60,26 +57,14 @@ const Filters = ({ isVisible, updateProducts }: { isVisible : boolean, updatePro
         updateProducts(filters);
     };
 
-    const debouncedApplyFilters = useRef(debounce(applyFilters, 1000)).current;
+    const debouncedUpdateProducts = useCallback(
+        debounce((filters) => updateProducts(filters), 1000),
+        []
+    );
 
     useEffect(() => {
-       // console.log(filters);
-    //    debouncedApplyFilters();
-    //    applyFilters();
-      setTimeout(() => {
-        updateProducts(filters);
-      }, 500);
+        debouncedUpdateProducts(filters);
     }, [filters]);
-
-    useEffect(() => {
-        if (navigationState?.filters) {
-            setFilters(prevFilters => ({
-                ...prevFilters,
-                ...navigationState.filters
-            }));
-        }
-    }, [navigationState]);
-
  
     const updateFilter = (key: string, value: string) => {
         setFilters((prevFilters) => ({
