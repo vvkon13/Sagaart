@@ -17,7 +17,7 @@ const Profile = (): JSX.Element => {
                 <div className={styles.main}>
                     <Menu onSelectTab={setSelectedTab} />
                     {selectedTab === 'Результаты оценки' && <AnalyticsHistory />}
-                    <FormPersonalAccountFeature/>
+                    {selectedTab === 'Личные данные' && <FormPersonalAccountFeature/>}
                 </div>
             </div>
         </section>);
