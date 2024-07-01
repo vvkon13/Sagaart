@@ -13,10 +13,13 @@ import { items, options } from '../constants';
 import { Artwork } from '../../../shared/entities/products';
 import { getProductsWithFilters } from '../../../shared/api/products-api';
 import NoProducts from './no-products';
+import { useLocation } from 'react-router-dom';
 
 const Catalog = (): JSX.Element => {
 
     const [products, setProducts] = useState<Artwork[]>([]);
+    const location = useLocation();
+    const navigationState = location.state as { filters: FiltersValues } | undefined;
 
     const [filters, setFilters] = useState<FiltersValues>({
         price: '',
@@ -46,9 +49,20 @@ const Catalog = (): JSX.Element => {
         fetchProducts();
     }, [filters, state.page]);
 
+    useEffect(() => {
+        if (navigationState?.filters) {
+            setFilters(prevFilters => ({
+                ...prevFilters,
+                ...navigationState.filters
+            }));
+        }
+    }, [navigationState]);
+
     const fetchProducts = () => {
+        console.log(filters);
         getProductsWithFilters(filters, state.page)
         .then((res) => {
+            console.log(res);
             if (res.results.length == 0) {
                 setEmptyState(true);
             } else {
