@@ -71,6 +71,7 @@ function App() {
                 <Route path='/subscription' element={<Subscription />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/signin' element={<SignIn />} />
+                <Route path='/profile/:productId' element={<ProductCard />} />
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/review' element={<UploadingAnObject />} />
                 <Route path='/reset-password' element={<ResetPassword />} />
