@@ -17,13 +17,13 @@ const SerachInput: FC<SearchInputProps> = ({ place }) => {
     const navigate = useNavigate();
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && place === 'header') {
             navigate(RoutePathname.catalogPage, { state: { filters: { searchText: value } } });
         }
     };
 
     const navigateWithoutFilters = (value: string) => {
-        if (value == '') {
+        if (value == '' && place === 'header') {
             navigate(RoutePathname.catalogPage, { state: { clear: true } });
         }
     };

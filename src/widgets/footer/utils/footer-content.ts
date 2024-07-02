@@ -4,8 +4,8 @@ export const footerContent = [
 	{
 		columnTitle: 'О нас',
 		column: [
-			{ linkTitle: 'О проекте', url: '#' },
-			{ linkTitle: 'Подключиться', url: '#' },
+			{ linkTitle: 'О проекте', url: RoutePathname.mainPage },
+			{ linkTitle: 'Подключиться', url: RoutePathname.subscriptionPage },
 			{ linkTitle: 'Каталог', url: RoutePathname.catalogPage },
 			{ linkTitle: 'Оценка стоимости', url: RoutePathname.reviewPage },
 		],
