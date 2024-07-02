@@ -19,7 +19,12 @@ const SerachInput: FC<SearchInputProps> = ({ place }) => {
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             navigate(RoutePathname.catalogPage, { state: { filters: { searchText: value } } });
-            setValue('');
+        }
+    };
+
+    const navigateWithoutFilters = (value: string) => {
+        if (value == '') {
+            navigate(RoutePathname.catalogPage, { state: { clear: true } });
         }
     };
 
@@ -35,6 +40,8 @@ const SerachInput: FC<SearchInputProps> = ({ place }) => {
             onChange={(e) => setValue(e.target.value)}
             startContent={<img src={image} alt='write' />}
             onKeyDown={handleKeyDown}
+            hasClear={place === 'header'}
+            onUpdate={navigateWithoutFilters}
         />
     );
 };

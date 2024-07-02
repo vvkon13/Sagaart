@@ -25,7 +25,6 @@ export const FormSigninFeature: FC = () => {
 		signIn({ ...data })
 			.then((res: IToken | void) => {
 				if ((res as IToken)?.auth_token) {
-					console.log((res as IToken)?.auth_token);
 					localStorage.setItem('token', (res as IToken)?.auth_token);
 					getUserInformation()
 						.then(({ email, user_name, telephone }: IUser) => {
@@ -33,7 +32,6 @@ export const FormSigninFeature: FC = () => {
 							dispatch(setEmail(email));
 							dispatch(setName(user_name ?? ''));
 							dispatch(setTelephone(telephone ?? ''));
-							console.log(email, user_name, telephone);
 							navigate(RoutePathname.profilePage);
 						})
 						.catch((err) => {

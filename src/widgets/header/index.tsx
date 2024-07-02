@@ -41,7 +41,7 @@ const Header = () => {
                     <NavLink to={RoutePathname.mainPage} className={style.link} >
                         <button className={style.button}>Главная</button>
                     </NavLink>
-                    <NavLink to={RoutePathname.catalogPage} className={style.link} >
+                    <NavLink to={RoutePathname.catalogPage} state={{ clear: true }} className={style.link} >
                         <button className={style.button}>Каталог</button>
                     </NavLink>
                     <NavLink to={RoutePathname.subscriptionPage} className={style.link} >
