@@ -11,6 +11,7 @@ import { loggedIn, setName, setEmail, setTelephone, resetUser } from '../../stor
 import { getUserInformation } from '../../shared/api/user';
 import {  useAppDispatch } from '../../shared/utils/hooks';
 import { IUser } from '../../shared/entities/user';
+import { RoutePathname } from '../../shared/utils/constants';
 
 export const FormSigninFeature: FC = () => {
 
@@ -33,7 +34,7 @@ export const FormSigninFeature: FC = () => {
 							dispatch(setName(user_name ?? ''));
 							dispatch(setTelephone(telephone ?? ''));
 							console.log(email, user_name, telephone);
-							navigate('/profile');
+							navigate(RoutePathname.profilePage);
 						})
 						.catch((err) => {
 							dispatch(resetUser());

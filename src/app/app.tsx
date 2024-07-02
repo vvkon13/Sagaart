@@ -100,7 +100,7 @@ function App() {
                                 width='max'
                                 className={clsx(style.button, style.button__left)}
                                 onClick={() => {
-                                    navigate('/review');
+                                    navigate(RoutePathname.reviewPage);
                                     handleClose();
                                 }}
                             >
@@ -112,7 +112,7 @@ function App() {
                                 width='max'
                                 className={clsx(style.button, style.button__right)}
                                 onClick={() => {
-                                    navigate('/profile');
+                                    navigate(RoutePathname.profilePage);
                                     handleClose();
                                 }}
                             >

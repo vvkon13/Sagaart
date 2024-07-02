@@ -7,6 +7,7 @@ import mailImage from '../../assets/icons/Mail-outline.svg';
 import style from './search-input.module.css';
 import clsx from 'clsx';
 import { useNavigate } from 'react-router-dom';
+import { RoutePathname } from '../../shared/utils/constants';
 
 const SerachInput: FC<SearchInputProps> = ({ place }) => {
 
@@ -17,7 +18,7 @@ const SerachInput: FC<SearchInputProps> = ({ place }) => {
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
-            navigate('/products', { state: { filters: { searchText: value } } });
+            navigate(RoutePathname.catalogPage, { state: { filters: { searchText: value } } });
             setValue('');
         }
     };
