@@ -1,9 +1,14 @@
-import React, { FC } from 'react';
+import React from 'react';
 import style from './style.module.css';
 import { Button } from '@gravity-ui/uikit';
+import { useAppSelector } from '../../../../shared/utils/hooks';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 
 const SubscriptionBlock = ({image, price, month}: {image: string, price: string, month: string}): JSX.Element => {
+    const isLoggedIn = useAppSelector(state => state.user.isLoggedIn);
+    const navigate = useNavigate();
+    
     return (
         <div className={style.main}>
             <img src={image} />
@@ -32,9 +37,11 @@ const SubscriptionBlock = ({image, price, month}: {image: string, price: string,
                     Неограниченное количество запросов на аналитику
                 </li>
             </ul>
-            <Button className={style.button} size='xl'>
-                оформить
-            </Button>
+            <NavLink to={!isLoggedIn ? '/signin' : ''} className={style.button}>
+                <Button className={style.button} size='xl'>
+                    оформить
+                </Button>
+            </NavLink>
         </div>
     );
 };
