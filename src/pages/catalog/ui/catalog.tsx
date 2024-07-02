@@ -9,11 +9,11 @@ import Sort from './sort';
 import Filters, { FiltersValues } from './filtration';
 import Categories from './categories';
 import BreadcrumbsComponent from './bread-crumbs';
-import { items, options } from '../constants';
 import { Artwork } from '../../../shared/entities/products';
 import { getProductsWithFilters } from '../../../shared/api/products-api';
 import NoProducts from './no-products';
 import { useLocation } from 'react-router-dom';
+import { filterOptions, items } from '../utils/data';
 
 const Catalog = (): JSX.Element => {
 
@@ -50,6 +50,7 @@ const Catalog = (): JSX.Element => {
     }, [filters, state.page]);
 
     useEffect(() => {
+        console.log(navigationState?.filters);
         if (navigationState?.filters) {
             setFilters(prevFilters => ({
                 ...prevFilters,
@@ -59,10 +60,8 @@ const Catalog = (): JSX.Element => {
     }, [navigationState]);
 
     const fetchProducts = () => {
-        console.log(filters);
         getProductsWithFilters(filters, state.page)
         .then((res) => {
-            console.log(res);
             if (res.results.length == 0) {
                 setEmptyState(true);
             } else {
@@ -74,7 +73,10 @@ const Catalog = (): JSX.Element => {
     };
 
     const updateProducts = (newFilters: FiltersValues) => {
-        setFilters(newFilters);
+        setFilters(prevFilters => ({
+            ...prevFilters,
+            ...newFilters
+        }));
         setState((prevState) => ({ ...prevState, page: 1 }));
       };
 
@@ -91,7 +93,7 @@ const Catalog = (): JSX.Element => {
                         Показать фильтры
                         {isSidebarVisible ? <Icon data={ChevronLeft} size={20}/> :  <Icon data={ChevronRight} size={20}/>}
                     </Button>
-                    <Sort options={options}/>
+                    <Sort options={filterOptions}/>
                 </div>
                 {emptyState && <NoProducts /> }
                 <div className={style.gallery}>
