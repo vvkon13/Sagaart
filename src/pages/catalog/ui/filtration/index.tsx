@@ -51,10 +51,6 @@ const Filters = ({ isVisible, updateProducts }: { isVisible : boolean, updatePro
         country: ''
     });
 
-    const applyFilters = () => {
-        updateProducts(filters);
-    };
-
     const debouncedUpdateProducts = useCallback(
         debounce((filters) => updateProducts(filters), 1000),
         []
