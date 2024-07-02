@@ -10,9 +10,14 @@ import benefit3 from '../../../assets/images/Immage.png';
 import price1 from '../../../assets/images/price1.png';
 import price2 from '../../../assets/images/price2.png';
 import price3 from '../../../assets/images/price3.png';
+import { useNavigate } from 'react-router-dom';
+import { RoutePathname } from '../../../shared/utils/constants';
 
 
 const Subscription = (): JSX.Element => {
+
+    const navigate = useNavigate();
+
     return (
         <div className={style.main}>
             <section className={style.section_slider}>
@@ -136,7 +141,7 @@ const Subscription = (): JSX.Element => {
                     <p className={style.section_questions__desc}>
                         Ответим в течении 6 часов
                     </p>
-                    <Button size='xl' className={style.section_questions__button}>
+                    <Button size='xl' className={style.section_questions__button} onClick={() => navigate(RoutePathname.feedbackPage)}>
                         написать
                     </Button>
                 </div>

@@ -8,11 +8,12 @@ import Achievements from './achievements';
 import PriceHistory from './price-history';
 import BreadcrumbsComponent from '../../catalog/ui/bread-crumbs';
 import { Item } from '../../../shared/entities/breadcrumbs';
-import { ArtworkDetails } from '../../../shared/entities/product-details';
+import { IArtworkDetails } from '../../../shared/entities/product-details';
 import { getProduct } from '../../../shared/api/products-api';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import OtherArtwork from './other-work';
 import Charts from '../../../widgets/charts';
+import { RoutePathname } from '../../../shared/utils/constants';
 
 export interface Work {
     id: number, 
@@ -20,7 +21,7 @@ export interface Work {
 }
 
 const ProductCard = (): JSX.Element => {
-    const [product, setProduct] = useState<ArtworkDetails | null>(null);
+    const [product, setProduct] = useState<IArtworkDetails | null>(null);
     const navigate = useNavigate();
     const { productId } = useParams();
 
@@ -37,7 +38,7 @@ const ProductCard = (): JSX.Element => {
     const breadItem = product.author.name ?? '';
     const items: Item[] = [
         { text: 'Каталог', action: () => {
-            navigate('/products');
+            navigate(RoutePathname.catalogPage);
         } },
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         { text: breadItem, action: () => {} },
