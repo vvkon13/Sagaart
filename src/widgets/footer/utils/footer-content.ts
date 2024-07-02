@@ -1,13 +1,11 @@
-import { base_url } from '../../../shared/utils/constants';
-
 export const footerContent = [
 	{
 		columnTitle: 'О нас',
 		column: [
-			{ linkTitle: 'О проекте', url: '/' },
+			{ linkTitle: 'О проекте', url: '#' },
 			{ linkTitle: 'Подключиться', url: '#' },
-			{ linkTitle: 'Каталог', url: 'https://sagaart.bounceme.net/#/products' },
-			{ linkTitle: 'Оценка стоимости', url: 'https://sagaart.bounceme.net/#/review' },
+			{ linkTitle: 'Каталог', url: '/products' },
+			{ linkTitle: 'Оценка стоимости', url: '/review' },
 		],
 	},
 	{

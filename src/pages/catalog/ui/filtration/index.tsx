@@ -1,12 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import style from './style.module.css';
-import { Button, Icon, RadioGroup, TextInput } from '@gravity-ui/uikit';
+import { Icon, RadioGroup, TextInput } from '@gravity-ui/uikit';
 import { product_category, product_cost_category, product_genre, product_size_category, product_style } from './constants';
 import search from '../../../../assets/icons/Loupe.svg';
 import debounce from 'lodash/debounce';
 import {ChevronDown, ChevronUp} from '@gravity-ui/icons';
-import { useLocation } from 'react-router-dom';
-
 interface FiltersState {
     price: boolean;
     size: boolean;
