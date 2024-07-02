@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Sagaart/static/css/main.127062ad.css",
-    "main.js": "/Sagaart/static/js/main.4490ecf9.js",
+    "main.css": "/Sagaart/static/css/main.763be30e.css",
+    "main.js": "/Sagaart/static/js/main.b9addf4e.js",
     "static/media/20.png": "/Sagaart/static/media/20.0aca442ec0472f2bff6d.png",
     "static/media/18.png": "/Sagaart/static/media/18.126ca308eb4d4f52906f.png",
     "static/media/15.png": "/Sagaart/static/media/15.a6e45b231123439ac45a.png",
@@ -51,11 +51,13 @@
     "static/media/heart-card.svg": "/Sagaart/static/media/heart-card.deeeec6be88e9cab97ed40302eda9908.svg",
     "static/media/Loupe.svg": "/Sagaart/static/media/Loupe.b7cc4433b13eb25ed5df0b045fbf7dd3.svg",
     "static/media/Eye-alt.svg": "/Sagaart/static/media/Eye-alt.f50e4c480784198b3d4d16fff1897cb6.svg",
-    "main.127062ad.css.map": "/Sagaart/static/css/main.127062ad.css.map",
-    "main.4490ecf9.js.map": "/Sagaart/static/js/main.4490ecf9.js.map"
+    "static/media/arrow-down-to-line.svg": "/Sagaart/static/media/arrow-down-to-line.562715a7e011a3116de975ac3b65b75e.svg",
+    "static/media/arrow-up-from-line.svg": "/Sagaart/static/media/arrow-up-from-line.0b9c5d879907d5a28263e537359d057b.svg",
+    "main.763be30e.css.map": "/Sagaart/static/css/main.763be30e.css.map",
+    "main.b9addf4e.js.map": "/Sagaart/static/js/main.b9addf4e.js.map"
   },
   "entrypoints": [
-    "static/css/main.127062ad.css",
-    "static/js/main.4490ecf9.js"
+    "static/css/main.763be30e.css",
+    "static/js/main.b9addf4e.js"
   ]
 }
