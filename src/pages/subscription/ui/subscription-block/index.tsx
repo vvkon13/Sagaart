@@ -2,12 +2,11 @@ import React from 'react';
 import style from './style.module.css';
 import { Button } from '@gravity-ui/uikit';
 import { useAppSelector } from '../../../../shared/utils/hooks';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const SubscriptionBlock = ({image, price, month}: {image: string, price: string, month: string}): JSX.Element => {
     const isLoggedIn = useAppSelector(state => state.user.isLoggedIn);
-    const navigate = useNavigate();
     
     return (
         <div className={style.main}>
