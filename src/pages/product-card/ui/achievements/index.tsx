@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import InfoPoint from '../../../../widgets/info-point';
 import { Show } from '../../../../shared/entities/product-details';
 import style from './style.module.css';
