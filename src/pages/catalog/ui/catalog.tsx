@@ -11,7 +11,7 @@ import Categories from './categories';
 import BreadcrumbsComponent from './bread-crumbs';
 import { items, options } from '../constants';
 import { Artwork } from '../../../shared/entities/products';
-import { getProducts, getProductsWithFilters } from '../../../shared/api/products-api';
+import { getProductsWithFilters } from '../../../shared/api/products-api';
 import NoProducts from './no-products';
 
 const Catalog = (): JSX.Element => {

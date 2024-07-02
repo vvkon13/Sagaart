@@ -76,8 +76,6 @@ const DropdownBlock = ({ children }: {children: JSX.Element[]}) => (
 
 const ArtworkSection = ({ title, works }: { title: string, works: Work[] }) => {
 
-    const navigate = useNavigate();
-
     return (
         <section className={style.section_author_works}>
             <h3 className={style.title}>{title}</h3>

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import style from './style.module.css';
 import { Button, Icon, RadioGroup, TextInput } from '@gravity-ui/uikit';
 import { product_category, product_cost_category, product_genre, product_size_category, product_style } from './constants';
