@@ -5,14 +5,14 @@ import {Database} from '@gravity-ui/icons';
 import Benefit from './benefit';
 import New from './new';
 import { useNavigate } from 'react-router-dom';
-import { Artwork } from '../../../shared/entities/products';
+import { IArtwork } from '../../../shared/entities/products';
 import { getProducts } from '../../../shared/api/products-api';
 import Card from '../../../widgets/card/card';
 import { BENEFITS, NEWS, GALLERY_IMAGES } from '../utils/constants';
 
 const Main = (): JSX.Element => {
 
-    const [products, setProducts] = useState<Artwork[] | null>(null);
+    const [products, setProducts] = useState<IArtwork[] | null>(null);
     const navigate = useNavigate();
 
     useEffect(() => {
