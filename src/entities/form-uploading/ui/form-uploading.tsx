@@ -164,7 +164,7 @@ export const FormFieldsUploading: FC<FormUploadingProps> = ({
                             <Input
                                 name="material"
                                 labelName="Материал работы"
-                                placeholder="Укажите материал которым нарисовано"
+                                placeholder="Укажите материал, которым нарисовано"
                                 error={errors.material ? `${errors.material?.message}` : ''}
                                 style={{ backgroundColor: 'rgba(239,233,224,1)' }}
                                 onFocus={() => setServerErrorText('')}
