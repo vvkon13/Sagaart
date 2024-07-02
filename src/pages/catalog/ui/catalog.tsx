@@ -2,14 +2,11 @@ import { Button,  Icon,  Pagination, PaginationProps } from '@gravity-ui/uikit';
 import React, { useEffect, useState } from 'react';
 import style from './style.module.css';
 import Card from '../../../widgets/card/card';
-import {Funnel} from '@gravity-ui/icons';
-import {ChevronLeft} from '@gravity-ui/icons';
-import {ChevronRight} from '@gravity-ui/icons';
 import Sort from './sort';
 import Filters, { FiltersValues } from './filtration';
 import Categories from './categories';
 import BreadcrumbsComponent from './bread-crumbs';
-import { Artwork } from '../../../shared/entities/products';
+import { IArtwork } from '../../../shared/entities/products';
 import { getProductsWithFilters } from '../../../shared/api/products-api';
 import NoProducts from './no-products';
 import { useLocation } from 'react-router-dom';
@@ -17,9 +14,9 @@ import { filterOptions, items } from '../utils/data';
 
 const Catalog = (): JSX.Element => {
 
-    const [products, setProducts] = useState<Artwork[]>([]);
+    const [products, setProducts] = useState<IArtwork[]>([]);
     const location = useLocation();
-    const navigationState = location.state as { filters: FiltersValues } | undefined;
+    const navigationState = location.state as { filters: FiltersValues, clear: boolean } | undefined;
 
     const [filters, setFilters] = useState<FiltersValues>({
         price: '',
@@ -31,12 +28,7 @@ const Catalog = (): JSX.Element => {
         maxYear: '',
         country: ''
     });
-    
-    const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
-    const toggleSidebar = () => {
-        setIsSidebarVisible(!isSidebarVisible);
-    };
 
     const [state, setState] = useState({page: 1, pageSize: products?.length});
     const [total, setTotal] = useState<number>(0);
@@ -50,7 +42,19 @@ const Catalog = (): JSX.Element => {
     }, [filters, state.page]);
 
     useEffect(() => {
-        console.log(navigationState?.filters);
+        if (navigationState?.clear) {
+            setFilters({
+                price: '',
+                size: '',
+                category: '',
+                genre: '',
+                style: '',
+                minYear: '',
+                maxYear: '',
+                country: ''
+            });
+            return;
+        }
         if (navigationState?.filters) {
             setFilters(prevFilters => ({
                 ...prevFilters,
@@ -88,16 +92,11 @@ const Catalog = (): JSX.Element => {
             </div>
             <div className={style.container}>
                 <div className={style.filters}>
-                    <Button size='s' className={style.button} onClick={toggleSidebar}>
-                        <Icon data={Funnel} size={18}/>
-                        Показать фильтры
-                        {isSidebarVisible ? <Icon data={ChevronLeft} size={20}/> :  <Icon data={ChevronRight} size={20}/>}
-                    </Button>
+                    <Filters updateProducts={updateProducts}/>
                     <Sort options={filterOptions}/>
                 </div>
                 {emptyState && <NoProducts /> }
                 <div className={style.gallery}>
-                    <Filters isVisible={isSidebarVisible} updateProducts={updateProducts} />
                     {products && products.map(product => (
                         <Card card={product} key={product.id}/>
                     ))}
