@@ -1,5 +1,5 @@
-import { Button,  Icon,  Pagination, PaginationProps } from '@gravity-ui/uikit';
 import React, { useEffect, useState } from 'react';
+import { Pagination, PaginationProps } from '@gravity-ui/uikit';
 import style from './style.module.css';
 import Card from '../../../widgets/card/card';
 import Sort from './sort';
