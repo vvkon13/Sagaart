@@ -17,7 +17,6 @@ export const getProducts = async () => {
 
 export const getProductsWithFilters = async (filters: FiltersValues, page: number) => {
   const url = generateUrlWithQueryParams(`${base_url}product`, filters, page);
-  console.log(url);
   const res = await fetch(url, {
     method: 'GET',
     headers: {
@@ -38,7 +37,8 @@ const generateUrlWithQueryParams = (originUrl: string, filters: FiltersValues, p
   if (filters.style) queryParams.append('style', filters.style);
   if (filters.minYear) queryParams.append('min_year', filters.minYear);
   if (filters.maxYear) queryParams.append('max_year', filters.maxYear);
-  if (filters.country) queryParams.append('country', filters.country);
+  if (filters.country) queryParams.append('country', encodeURIComponent(filters.country));
+  if (filters.searchText) queryParams.append('search', filters.searchText);
   queryParams.append('page', page + '');
   console.log(originUrl);
 
