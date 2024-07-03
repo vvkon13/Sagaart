@@ -24,7 +24,6 @@ export const FormSignupFeature: FC = () => {
 		setServerErrorText('');
 		setServerEmailError('');
 		setServerPasswordError('');
-		console.log(data);
 		createUser({ ...data })
 			.then(() => {
 				navigate(RoutePathname.loginPage);
