@@ -32,13 +32,13 @@ export const FormSigninFeature: FC = () => {
 							dispatch(setEmail(email));
 							dispatch(setName(user_name ?? ''));
 							dispatch(setTelephone(telephone ?? ''));
-							navigate(RoutePathname.profilePage);
 						})
 						.catch((err) => {
 							dispatch(resetUser());
 							localStorage.removeItem('token');
 							console.error(err);
 						});
+						navigate(RoutePathname.profilePage);
 				}
 			})
 			.catch((error) => {

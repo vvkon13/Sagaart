@@ -15,7 +15,7 @@ export const createUser = async (user: IUser) => {
   return checkResp<IUser>(res);
 };
 
-export const signIn = async (data: any): Promise<IToken | void> => {
+export const signIn = async (data: IUser): Promise<IToken | void> => {
   const res = await fetch(`${base_url}user/token/login/`, {
     method: 'POST',
     headers: {
