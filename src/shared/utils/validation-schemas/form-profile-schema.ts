@@ -12,8 +12,9 @@ const schema = yup.object().shape({
         .string()
         .trim()
         .matches(
-            /^\+7|8 \([1-9]{1}\d{2}\) \d{3}-\d{2}-\d{2}$/,
+            /^(?:\+7|8 \([1-9]{1}\d{2}\) \d{3}-\d{2}-\d{2})?$/,
             { message: 'Введите корректный телефон', excludeEmptyString: false }
+
         )
         .notRequired(),
 });
