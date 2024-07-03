@@ -77,7 +77,7 @@ function App() {
                 <Route path={RoutePathname.profilePage} element={<OnlyAuth component={<Profile />} />} /> 
                 <Route path={RoutePathname.reviewPage} element={<OnlyAuth component={<UploadingAnObject />} />} />
                 <Route path={RoutePathname.resetPassPage} element={<OnlyUnAuth component={<ResetPassword />}/>}/>
-                <Route path={RoutePathname.resetPassEmailPage} element={<OnlyUnAuth component={<ResetPassword />}/>}/>
+                <Route path={RoutePathname.resetPassEmailPage} element={<ResetPassword />} />
                 <Route path={RoutePathname.newPasswordSubmitionPage} element={<OnlyUnAuth component={<NewPasswordSubmition />}/>}/>
                 <Route path={RoutePathname.resetPassSubmissionPage}  element={<OnlyUnAuth component={<ResetPasswordSubmition />}/>}/>
                 <Route path={RoutePathname.feedbackPage} element={<Feedback />} />
